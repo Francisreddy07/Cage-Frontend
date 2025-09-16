@@ -1,0 +1,33 @@
+{
+    "student": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "age": 20,
+            "class": "A",
+            "rollNumber": "A12345"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "age": 22,
+            "class": "B",
+            "rollNumber": "B54321"
+        }
+    ],
+
+    "teacher": [
+        {
+            "id": 1,
+            "name": "Mr. Brown",
+            "subject": "Mathematics",
+            "experience": 5
+        },
+        {
+            "id": 2,
+            "name": "Ms. Green",
+            "subject": "Science",
+            "experience": 3
+        }
+    ]
+}

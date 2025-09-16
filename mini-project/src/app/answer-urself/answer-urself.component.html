@@ -1,0 +1,151 @@
+  <div class="banner">
+  <div class="top-strip">
+    “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+    </div>
+    <header class="navbar">
+      <div class="logo"><img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png" alt="" class="img-logo" [routerLink]="['/']"></div>
+      <nav>
+        <a href="#">Solution</a>
+        <a href="#">Who We Help</a>
+        <a href="#">Research & Technology</a>
+        <a href="#">About Us</a>
+      </nav>
+      <div class="actions">
+        <a href="#">Log In</a>
+        <!-- <button class="btn-demo">Answer Urself</button> -->
+      </div>
+    </header>
+
+  <section class="aiberry-hero-banner">
+    <!-- Parallax dots -->
+    <div class="background-dots"></div>
+
+    <!-- Floating glass icons -->
+    <div class="floating-icon-left">
+      <img src="https://imgs.search.brave.com/tmV4lgoFgarlMivw2LOy2YPs0Al3sh7f513BVrH_xeo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM0/NDA2MDA4NS9waG90/by9ob3BlbGVzcy10/ZWVuLWdpcmwtbGlz/dGVucy10by1hZHZp/Y2UtZnJvbS11bnJl/Y29nbml6YWJsZS1m/ZW1hbGUtdGhlcmFw/aXN0LmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz0yTWdySmV4/eVFfUU1ua3dTNGF2/RFdFdmQ0eDlia0E5/NjZJQnlOazduS1p3/PQ" alt="Icon Left">
+      
+    </div>
+
+    <div class="floating-icon-right">
+      <img src="https://imgs.search.brave.com/VDYAomcMivQNXgZP5XtTlwyXyVxWURcIKnNhnAcnaj8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDg2/Mjc5MTA4L3Bob3Rv/L3lvZ2EtYXQtaG9t/ZS5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9dkU2bU02bnRH/NXJYR05DNDZ4MjAz/Vm5JT1ROU3NrdkN2/Zy1wMERMTDFGRT0" alt="Icon Right">
+      
+    </div>
+
+    <!-- Main Banner Content -->
+    <div class="banner-content">
+      <h1 class="banner-heading">
+        There are many mental illnesses<br>Do you know what they are?
+      </h1>
+      <p>Awareness is the first step to care. Explore and understand better with CAGE.</p>
+    <button type="button" class="banner-btn" (click)="scrollToCards()">Know More</button>
+
+    </div>
+  </section>
+
+  <section class="answer-yourself" #cardsSection id="cardsSection">
+    <h2 class="section-title">Understand Yourself Better</h2>
+    <div class="cards-grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <h3>Depression</h3>
+        <p>Persistent sadness and loss of interest.</p>
+        <button class="card-btn" [routerLink]="['/condition', 'depression']">Check Yourself</button>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <h3>Emotional Wellbeing with a Baby</h3>
+        <p>Balance of emotions for a healthier life.</p>
+        <button class="card-btn" [routerLink]="['/condition', 'emotional-wellbeing']">Check Yourself</button>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <h3>Generalised anxiety disorder</h3>
+        <p>Excessive worry affecting daily life.</p>
+        <button class="card-btn" [routerLink]="['/condition', 'gad']">Check Yourself</button>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <h3>Health Anxiety</h3>
+        <p>Constant fear about your health.</p>
+        <button class="card-btn" [routerLink]="['/condition', 'health-anxiety']">Check Yourself</button>
+      </div>
+      <!-- Card 5 -->
+      <div class="card">
+        <h3>Panic Disorder</h3>
+        <p>Sudden intense fear with physical symptoms.</p>
+        <button class="card-btn" [routerLink]="['/condition', 'panic-disorder']">Check Yourself</button>
+      </div>
+      <!-- Card 6 -->
+      <div class="card">
+        <h3>Social Anxiety</h3>
+        <p>Fear of judgment in social situations.</p>
+        <button class="card-btn" [routerLink]="['/condition', 'social-anxiety']">Check Yourself</button>
+      </div>
+      <!-- Card 7 -->
+      <div class="card">
+        <h3>Post traumatic stress disorder</h3>
+        <p>Lasting distress after traumatic events.</p>
+        <button class="card-btn" [routerLink]="['/condition', 'ptsd']">Check Yourself</button>
+      </div>
+      <!-- Card 8 -->
+      <div class="card">
+        <h3>Obsessive compulsive disorder</h3>
+        <p>Repetitive thoughts and compulsive actions.</p>
+        <button class="card-btn" [routerLink]="['/condition', 'ocd']">Check Yourself</button>
+      </div>
+      <!-- Card 9 -->
+      <div class="card">
+        <h3>Phobias</h3>
+        <p>Intense fears of specific things or situations.</p>
+        <button class="card-btn" [routerLink]="['/condition', 'phobias']">Check Yourself</button>
+      </div>
+      <div class="card">
+        <h3>Dementia</h3>
+        <p>Brain losing memory and thinking.</p>
+        <button class="card-btn" [routerLink]="['/condition', 'dementia']">Check Yourself</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section footer-branding">
+        <div class="footer-logo"></div>
+        <img
+          src="https://res.cloudinary.com/dswldtvef/image/upload/v1757191567/cage-logo-white-transparent_bljlli.png"
+          alt="HIPAA verified badge"
+          class="hipaa-badge"/>
+      </div>
+
+      <div class="footer-section footer-links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">Solution</a></li>
+          <li><a href="#">Recovery Centers</a></li>
+          <li><a href="#">Corrections</a></li>
+          <li><a href="#">Corporate Wellness</a></li>
+          <li><a href="#">Research & Technology</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section footer-links">
+        <h3>Customer</h3>
+        <ul>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Get Started</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright ©. All Rights Reserved.</p>
+    </div>
+    
+
+  </footer>
+
+  </div>

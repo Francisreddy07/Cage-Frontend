@@ -1,0 +1,210 @@
+<aside class="sidebar" role="navigation" aria-label="Test section navigation">
+  <div class="sidebar-logo">
+    <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png?q_auto,f_auto" alt="CAGE Mental Health Logo" loading="lazy" [routerLink]="['/home']">
+  </div>
+  <hr>
+  <h3 class="sidebar-title">Sections</h3>
+  <ul class="sidebar-list">
+    <li><button [routerLink]="['/condition', 'depression']" class="active">Depression</button></li>
+    <li><button  [routerLink]="['/condition', 'emotional-wellbeing']">Emotional Wellbeing with a Baby</button></li>
+    <li><button [routerLink]="['/condition', 'gad']">Generalised anxiety disorder</button></li>
+    <li><button [routerLink]="['/condition', 'health-anxiety']">Health Anxiety</button></li>
+    <li><button [routerLink]="['/condition', 'panic-disorder']">Panic Disorder</button></li>
+    <li><button [routerLink]="['/condition', 'social-anxiety']">Social Anxiety</button></li>
+    <li><button [routerLink]="['/condition', 'ptsd']">Post traumatic stress disorder</button></li>
+    <li><button [routerLink]="['/condition', 'ocd']">Obsessive compulsive disorder</button></li>
+    <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li>
+    <li><button [routerLink]="['/condition', 'dementia']">Dementia</button></li>
+  </ul>
+</aside>
+
+<div class="banner">
+  <div class="top-strip">
+    “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+  </div>
+</div>
+
+<main class="test-content">
+  <div class="test-header">
+    <h2>Depression Assessment (PHQ-2 & PHQ-9)</h2>
+    <p>Screen for depression with PHQ-2; proceed to PHQ-9 if score is 3 or higher.</p>
+  </div>
+
+  <!-- PHQ-2 Section -->
+  <div class="card" id="phq-2">
+    <h3>PHQ-2 Screening</h3>
+    <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+    <div class="question-box" role="group" aria-label="PHQ-2 questions">
+      <label><strong>1. Little interest or pleasure in doing things</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq2_q1" [(ngModel)]="phq2_q1" value="0" aria-label="Not at all for question 1"> Not at all</label>
+        <label><input type="radio" name="phq2_q1" [(ngModel)]="phq2_q1" value="1" aria-label="Several days for question 1"> Several days</label>
+        <label><input type="radio" name="phq2_q1" [(ngModel)]="phq2_q1" value="2" aria-label="More than half the days for question 1"> More than half the days</label>
+        <label><input type="radio" name="phq2_q1" [(ngModel)]="phq2_q1" value="3" aria-label="Nearly every day for question 1"> Nearly every day</label>
+      </div>
+      <label><strong>2. Feeling down, depressed, or hopeless</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq2_q2" [(ngModel)]="phq2_q2" value="0" aria-label="Not at all for question 2"> Not at all</label>
+        <label><input type="radio" name="phq2_q2" [(ngModel)]="phq2_q2" value="1" aria-label="Several days for question 2"> Several days</label>
+        <label><input type="radio" name="phq2_q2" [(ngModel)]="phq2_q2" value="2" aria-label="More than half the days for question 2"> More than half the days</label>
+        <label><input type="radio" name="phq2_q2" [(ngModel)]="phq2_q2" value="3" aria-label="Nearly every day for question 2"> Nearly every day</label>
+      </div>
+    </div>
+    <div style="margin-left:auto; display:flex; flex-direction:column; align-items:flex-end;">
+      <button class="save-btn" (click)="calculatePhq2Score()" aria-label="Calculate PHQ-2 score">Calculate Score</button>
+      <p *ngIf="phq2Score !== null" class="result">Your PHQ-2 score: {{ phq2Score }}</p>
+      <p *ngIf="phq2Score !== null && phq2Score >= 3" class="result" style="color: #ec1458;">Score ≥ 3, proceed to PHQ-9 below.</p>
+    </div>
+  </div>
+
+  <!-- PHQ-9 Section (Conditional Display) -->
+  <div class="card" id="phq-9" *ngIf="showPhq9">
+    <h3>PHQ-9 Assessment</h3>
+    <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+    <div class="question-box" role="group" aria-label="PHQ-9 questions">
+      <label><strong>1. Little interest or pleasure in doing things</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq9_q1" [(ngModel)]="phq9_q1" value="0" aria-label="Not at all for question 1"> Not at all</label>
+        <label><input type="radio" name="phq9_q1" [(ngModel)]="phq9_q1" value="1" aria-label="Several days for question 1"> Several days</label>
+        <label><input type="radio" name="phq9_q1" [(ngModel)]="phq9_q1" value="2" aria-label="More than half the days for question 1"> More than half the days </label>
+        <label><input type="radio" name="phq9_q1" [(ngModel)]="phq9_q1" value="3" aria-label="Nearly every day for question 1"> Nearly every day</label>
+      </div>
+      <label><strong>2. Feeling down, depressed, or hopeless</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq9_q2" [(ngModel)]="phq9_q2" value="0" aria-label="Not at all for question 2"> Not at all </label>
+        <label><input type="radio" name="phq9_q2" [(ngModel)]="phq9_q2" value="1" aria-label="Several days for question 2"> Several days</label>
+        <label><input type="radio" name="phq9_q2" [(ngModel)]="phq9_q2" value="2" aria-label="More than half the days for question 2"> More than half the days</label>
+        <label><input type="radio" name="phq9_q2" [(ngModel)]="phq9_q2" value="3" aria-label="Nearly every day for question 2"> Nearly every day</label>
+      </div>
+      <label><strong>3. Trouble falling or staying asleep, or sleeping too much</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq9_q3" [(ngModel)]="phq9_q3" value="0" aria-label="Not at all for question 3"> Not at all</label>
+        <label><input type="radio" name="phq9_q3" [(ngModel)]="phq9_q3" value="1" aria-label="Several days for question 3"> Several days</label>
+        <label><input type="radio" name="phq9_q3" [(ngModel)]="phq9_q3" value="2" aria-label="More than half the days for question 3"> More than half the days</label>
+        <label><input type="radio" name="phq9_q3" [(ngModel)]="phq9_q3" value="3" aria-label="Nearly every day for question 3"> Nearly every day</label>
+      </div>
+      <label><strong>4. Feeling tired or having little energy</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq9_q4" [(ngModel)]="phq9_q4" value="0" aria-label="Not at all for question 4"> Not at all</label>
+        <label><input type="radio" name="phq9_q4" [(ngModel)]="phq9_q4" value="1" aria-label="Several days for question 4"> Several days</label>
+        <label><input type="radio" name="phq9_q4" [(ngModel)]="phq9_q4" value="2" aria-label="More than half the days for question 4"> More than half the days</label>
+        <label><input type="radio" name="phq9_q4" [(ngModel)]="phq9_q4" value="3" aria-label="Nearly every day for question 4"> Nearly every day</label>
+      </div>
+      <label><strong>5. Poor appetite or overeating</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq9_q5" [(ngModel)]="phq9_q5" value="0" aria-label="Not at all for question 5"> Not at all</label>
+        <label><input type="radio" name="phq9_q5" [(ngModel)]="phq9_q5" value="1" aria-label="Several days for question 5"> Several days</label>
+        <label><input type="radio" name="phq9_q5" [(ngModel)]="phq9_q5" value="2" aria-label="More than half the days for question 5"> More than half the days </label>
+        <label><input type="radio" name="phq9_q5" [(ngModel)]="phq9_q5" value="3" aria-label="Nearly every day for question 5"> Nearly every day</label>
+      </div>
+      <label><strong>6. Feeling bad about yourself — or that you are a failure or have let yourself or your family down</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq9_q6" [(ngModel)]="phq9_q6" value="0" aria-label="Not at all for question 6"> Not at all</label>
+        <label><input type="radio" name="phq9_q6" [(ngModel)]="phq9_q6" value="1" aria-label="Several days for question 6"> Several days </label>
+        <label><input type="radio" name="phq9_q6" [(ngModel)]="phq9_q6" value="2" aria-label="More than half the days for question 6"> More than half the days</label>
+        <label><input type="radio" name="phq9_q6" [(ngModel)]="phq9_q6" value="3" aria-label="Nearly every day for question 6"> Nearly every day</label>
+      </div>
+      <label><strong>7. Trouble concentrating on things, such as reading the newspaper or watching television</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq9_q7" [(ngModel)]="phq9_q7" value="0" aria-label="Not at all for question 7"> Not at all</label>
+        <label><input type="radio" name="phq9_q7" [(ngModel)]="phq9_q7" value="1" aria-label="Several days for question 7"> Several days </label>
+        <label><input type="radio" name="phq9_q7" [(ngModel)]="phq9_q7" value="2" aria-label="More than half the days for question 7"> More than half the days</label>
+        <label><input type="radio" name="phq9_q7" [(ngModel)]="phq9_q7" value="3" aria-label="Nearly every day for question 7"> Nearly every day</label>
+      </div>
+      <label><strong>8. Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq9_q8" [(ngModel)]="phq9_q8" value="0" aria-label="Not at all for question 8"> Not at all</label>
+        <label><input type="radio" name="phq9_q8" [(ngModel)]="phq9_q8" value="1" aria-label="Several days for question 8"> Several days</label>
+        <label><input type="radio" name="phq9_q8" [(ngModel)]="phq9_q8" value="2" aria-label="More than half the days for question 8"> More than half the days</label>
+        <label><input type="radio" name="phq9_q8" [(ngModel)]="phq9_q8" value="3" aria-label="Nearly every day for question 8"> Nearly every day</label>
+      </div>
+      <label><strong>9. Thoughts that you would be better off dead, or of hurting yourself in some way</strong></label>
+      <div class="options">
+        <label><input type="radio" name="phq9_q9" [(ngModel)]="phq9_q9" value="0" aria-label="Not at all for question 9"> Not at all </label>
+        <label><input type="radio" name="phq9_q9" [(ngModel)]="phq9_q9" value="1" aria-label="Several days for question 9"> Several days</label>
+        <label><input type="radio" name="phq9_q9" [(ngModel)]="phq9_q9" value="2" aria-label="More than half the days for question 9"> More than half the days </label>
+        <label><input type="radio" name="phq9_q9" [(ngModel)]="phq9_q9" value="3" aria-label="Nearly every day for question 9"> Nearly every day</label>
+      </div>
+    </div>
+    <div style="margin-left:auto; display:flex; flex-direction:column; align-items:flex-end;">
+      <button class="save-btn" (click)="calculatePhq9Score()" aria-label="Calculate PHQ-9 score">Calculate Score</button>
+      <p *ngIf="phq9Score !== null" class="result">Your PHQ-9 score: {{ phq9Score }}</p>
+    </div>
+  </div>
+</main>
+
+
+<div class="phq2-container">
+  <!-- Interpretation Box -->
+  <div class="info-box">
+    <h3>Interpretation:</h3>
+    <ul>
+      <li>A PHQ-2 score ranges from 0–6. A score of 3 is the optimal cutpoint for screening depression.</li>
+      <li>If the score is 3 or greater, major depressive disorder is likely.</li>
+      <li>Patients who screen positive should be further evaluated with the PHQ-9, other diagnostic instruments, or direct interview.</li>
+    </ul>
+  </div>
+
+  <!-- Major Depressive Disorder Section -->
+  <div class="card">
+    <h3>
+      Operating Characteristics of PHQ-2 as a Screener for Depressive Disorders in 580 Patients
+    </h3>
+    <p><strong>Major Depressive Disorder (7% Prevalence)</strong></p>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>PHQ-2 Score</th>
+          <th>Sensitivity</th>
+          <th>Specificity</th>
+          <th>Positive Predictive Value (PPV*)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>97.6</td><td>59.2</td><td>15.4</td></tr>
+        <tr><td>2</td><td>92.7</td><td>73.7</td><td>21.1</td></tr>
+        <tr><td>3</td><td>82.9</td><td>90.0</td><td>38.4</td></tr>
+        <tr><td>4</td><td>73.2</td><td>93.3</td><td>45.4</td></tr>
+        <tr><td>5</td><td>53.7</td><td>96.8</td><td>56.4</td></tr>
+        <tr><td>6</td><td>26.8</td><td>99.4</td><td>78.6</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Any Depressive Disorder Section -->
+  <div class="card">
+    <p><strong>Any Depressive Disorder (18% Prevalence)</strong></p>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>PHQ-2 Score</th>
+          <th>Sensitivity</th>
+          <th>Specificity</th>
+          <th>Positive Predictive Value (PPV*)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>90.6</td><td>65.4</td><td>36.9</td></tr>
+        <tr><td>2</td><td>82.1</td><td>80.4</td><td>48.3</td></tr>
+        <tr><td>3</td><td>62.3</td><td>95.4</td><td>75.0</td></tr>
+        <tr><td>4</td><td>50.9</td><td>97.9</td><td>81.2</td></tr>
+        <tr><td>5</td><td>31.1</td><td>98.7</td><td>84.6</td></tr>
+        <tr><td>6</td><td>12.3</td><td>99.8</td><td>92.9</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Notes -->
+  <div class="note-box">
+    <p><strong>Note:</strong> Because the PPV varies with the prevalence of depression, the PPV will be higher in settings with higher prevalence and lower in settings with lower prevalence.</p>
+  </div>
+
+  <!-- Sources -->
+  <div class="sources">
+    <h4>Sources</h4>
+    <p>Kroenke K, Spitzer RL, Williams JB. The Patient Health Questionnaire-2: Validity of a Two-Item Depression Screener. Medical Care. 2003;41:1284-92.</p>
+  </div>
+</div>
+

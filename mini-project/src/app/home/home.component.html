@@ -1,0 +1,246 @@
+<div class="banner">
+  <div class="top-strip">
+   “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+  </div>
+
+  <header class="navbar">
+    <div class="logo"><img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png" alt="" class="img-logo" [routerLink]="['/']"></div>
+    <nav>
+      <a href="#">Solution</a>
+      <a href="#">Who We Help</a>
+      <a href="#">Research & Technology</a>
+      <a href="#">About Us</a>
+    </nav>
+    <div class="actions">
+      <a [routerLink]="['/sign-up']" *ngIf="!token">Sign In</a>
+       <a *ngIf="token" (click)="signOut()">Sign Out</a>
+      <button class="btn-demo" [routerLink]="['/answer-urself']" >Answer Urself</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Know Your Mind, Early<br>Track Your Well-Being</h1>
+      <p>Real-time assessments for a healthier mind</p>
+      <button class="btn-demo" [routerLink]="['/answer-urself']">Answer Urself</button>
+    </div>
+  </section>
+</div>
+
+<div class="aiberry-clone">
+  <section class="smart-mind-care">
+    <div class="content">
+      <h1>Smart. Mind. Care.</h1>
+      <p>Smart. Mind. Care. is about understanding your thoughts clearly. It helps you manage stress and emotions effectively. It encourages daily habits that strengthen mental well-being. It turns awareness into practical action for a balanced mind.</p>
+      <button class="btn-learn">Learn More</button>
+    </div>
+    <div class="visuals">
+      <div class="tags">
+        <span class="tag words">WORDS</span>
+        <span class="tag audio">AUDIO</span>
+        <span class="tag visual">VISUAL</span>
+      </div>
+      <div class="image-box">
+        <img src="https://imgs.search.brave.com/RVllniJFTiac7adoY7VRXq9pg4_-wCHBHrMbry7oo-Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWluZHNjcmVlbi5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjEvMTIvQWJvdXQt/UGFnZS1JbWFnZS5q/cGc" alt="Woman analyzing data">
+        <!-- <div class="chart">
+          <img src="chart-placeholder.png" alt="Chart overlay">
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <section class="ai-secure">
+  <div class="ai-secure-content">
+    <div class="ai-logo">
+      <!-- <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png" alt="aiberry logo"> -->
+    </div>
+    <div class="ai-text ai-logo">
+      <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png" alt="aiberry logo">
+  <ul>
+    <li><strong>C</strong> – <em>Clarity</em>: Understand your thoughts and emotions clearly.</li>
+    <li><strong>A</strong> – <em>Awareness</em>: Recognize mental patterns and triggers.</li>
+    <li><strong>G</strong> – <em>Growth</em>: Develop habits that strengthen your mind.</li>
+    <li><strong>E</strong> – <em>Empowerment</em>: Take control of your mental well-being.</li>
+  </ul>
+    </div>
+  </div>
+</section>
+<section class="challenges">
+  <div class="challenges-header">
+    <p class="tag">CHALLENGES</p>
+    <h2>Committed to solving the biggest<br>challenges in mental health.</h2>
+  </div>
+  <div class="challenges-grid">
+    <div class="challenge-item">
+      <img src="https://cdn.prod.website-files.com/6543d67f262b5c2120708144/65ac00a1523ec6982b8aac11_Frame-20233.svg" alt="Unquantifiable Assessments">
+      <h3>UNQUANTIFIABLE ASSESSMENTS</h3>
+      <p>Manual mental health assessments lack quantifiability</p>
+    </div>
+    <div class="challenge-item">
+      <img src="https://cdn.prod.website-files.com/6543d67f262b5c2120708144/65ac01d4a76a2cf0284f3e01_Frame-20233-1.svg" alt="Varying Interpretations">
+      <h3>VARYING INTERPRETATIONS</h3>
+      <p>Inconsistencies reduce reliability of self-reported data</p>
+    </div>
+    <div class="challenge-item">
+      <img src="https://cdn.prod.website-files.com/6543d67f262b5c2120708144/65ac01dc43d996851a8f01d6_Frame-20233-1-1.svg" alt="Unconscious Biases">
+      <h3>UNCONSCIOUS BIASES</h3>
+      <p>Observer-rated assessments can be influenced by biases</p>
+    </div>
+    <div class="challenge-item">
+      <img src="https://cdn.prod.website-files.com/6543d67f262b5c2120708144/65ac01e5bde0d3879d9befcd_Frame-20234.svg" alt="Unreliable Results">
+      <h3>UNRELIABLE RESULTS</h3>
+      <p>Subpar assessment tools lead to unreliable outcomes</p>
+    </div>
+    <div class="challenge-item">
+      <img src="https://cdn.prod.website-files.com/6543d67f262b5c2120708144/65ac01ece3be64c348a34251_Frame-20235.svg" alt="Yes or No Results">
+      <h3>YES OR NO RESULTS</h3>
+      <p>Mental health conditions present on a continuum, not a yes or no</p>
+    </div>
+    <div class="challenge-item">
+      <img src="https://cdn.prod.website-files.com/6543d67f262b5c2120708144/65ac01f4cef6a2cfc7ee0f21_Group-4486-1.svg" alt="Limited Accessibility">
+      <h3>LIMITED ACCESSIBILITY</h3>
+      <p>Shortage of mental health professionals and assessments</p>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="users-talking">
+  <h2>Users are talking</h2>
+  <div class="user-avatar"></div>
+  <div class="user-avatar"></div>
+  <div class="user-avatar"></div>
+  <div class="user-avatar"></div>
+  <div class="user-avatar"></div>
+  <div class="carousel-wrapper">
+    </div>
+
+
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <div class="card">“After this experience, I realized I may be a little more depressed than I thought and I'm paying more attention to my mental health and I've taken some actions to try to help myself.”</div>
+      <div class="card">“I would love to do it again because you don’t have people every day asking you how you feel emotionally/mentally.”</div>
+      <div class="card">“This platform gave me new insights into my mood patterns and helped me take steps towards better mental health.”</div>
+      <div class="card">“I’ve never had such quick and accurate reflections about how I’m feeling. It’s like someone understands without me having to explain everything.”</div>
+      <div class="card">“It’s comforting to see my mental state tracked over time, like having a gentle mirror for my emotions.”</div>
+      <div class="card">“Honestly, I didn’t expect this to work so well. It made me aware of stress levels I was ignoring.”</div>
+            <div class="card">“After this experience, I realized I may be a little more depressed than I thought and I'm paying more attention to my mental health and I've taken some actions to try to help myself.”</div>
+      <div class="card">“I would love to do it again because you don’t have people every day asking you how you feel emotionally/mentally.”</div>
+      <div class="card">“This platform gave me new insights into my mood patterns and helped me take steps towards better mental health.”</div>
+      <div class="card">“I’ve never had such quick and accurate reflections about how I’m feeling. It’s like someone understands without me having to explain everything.”</div>
+      <div class="card">“It’s comforting to see my mental state tracked over time, like having a gentle mirror for my emotions.”</div>
+      <div class="card">“Honestly, I didn’t expect this to work so well. It made me aware of stress levels I was ignoring.”</div>
+    </div>
+  </div>
+</section> -->
+
+<section class="users-talking">
+  <h2>Users are talking</h2>
+  <div class="user-avatar"></div>
+  <div class="user-avatar"></div>
+  <div class="user-avatar"></div>
+  <div class="user-avatar"></div>
+  <div class="user-avatar"></div>
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <div class="card">“After this experience, I realized I may be a little more depressed than I thought and I'm paying more attention to my mental health and I've taken some actions to try to help myself.”</div>
+      <div class="card">“I would love to do it again because you don’t have people every day asking you how you feel emotionally/mentally.”</div>
+      <div class="card">“This platform gave me new insights into my mood patterns and helped me take steps towards better mental health.”</div>
+      <div class="card">“I’ve never had such quick and accurate reflections about how I’m feeling. It’s like someone understands without me having to explain everything.”</div>
+      <div class="card">“It’s comforting to see my mental state tracked over time, like having a gentle mirror for my emotions.”</div>
+      <div class="card">“Honestly, I didn’t expect this to work so well. It made me aware of stress levels I was ignoring.”</div>
+      <div class="card">“After this experience, I realized I may be a little more depressed than I thought and I'm paying more attention to my mental health and I've taken some actions to try to help myself.”</div>
+      <div class="card">“I would love to do it again because you don’t have people every day asking you how you feel emotionally/mentally.”</div>
+      <div class="card">“This platform gave me new insights into my mood patterns and helped me take steps towards better mental health.”</div>
+      <div class="card">“I’ve never had such quick and accurate reflections about how I’m feeling. It’s like someone understands without me having to explain everything.”</div>
+      <div class="card">“It’s comforting to see my mental state tracked over time, like having a gentle mirror for my emotions.”</div>
+      <div class="card">“Honestly, I didn’t expect this to work so well. It made me aware of stress levels I was ignoring.”</div>
+    </div>
+  </div>
+</section>
+
+<section class="news-section">
+  <div class="news-header">
+    <h2>Latest News & Developments</h2>
+    <a href="#" class="see-all">See All <span class="arrow">&gt;</span></a>
+  </div>
+
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-image-container">
+        <img src="https://imgs.search.brave.com/LTXnuBG8okF5iWh4l4U5WZDDtrsP2I7y9J1G0qWjAgc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2FhL2Vj/LzliL2FhZWM5YjNj/YTIwZmU0NGM4Njc0/NWM1ZDYxNGYzNmFj/LmpwZw" alt="AI Mental Health Assessment Dashboard" />
+      </div>
+      <p class="news-date">AUGUST 8, 2023</p>
+      <h3 class="news-title">Building Stronger Minds Through CAGE: Clarity, Awareness, Growth, Empowerment</h3>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+
+    <div class="news-card">
+      <div class="news-image-container">
+        <img src="https://imgs.search.brave.com/PXPQXbpebPjl_fusnjIieA3DMAiCt_YwO4i4iZfS7d8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dWNoaWNhZ29tZWRp/Y2luZS5vcmcvX25l/eHQvaW1hZ2U_dXJs/PWh0dHBzOi8vZWRn/ZS5zaXRlY29yZWNs/b3VkLmlvL3VuaWNo/aWNhZ29tYy04MW5i/cW5iMy9tZWRpYS9p/bWFnZXMvdWNtYy9m/b3JlZnJvbnQvY2hh/bm5lbC1wYWdlcy9o/ZWFsdGgtYW5kLXdl/bGxuZXNzL21lbnRh/bC1oZWFsdGgtYXdh/cmVuZXNzLXVuaXZl/cnNhbC04MzJ4NDY5/LmpwZyZ3PTM4NDAm/cT03NQ" alt="Clinical Validation Study" />
+      </div>
+      <p class="news-date">OCTOBER 6, 2023</p>
+      <h3 class="news-title">Prioritizing Mental Health: Understanding the Mind, Breaking Stigma, and Building a Culture of Care</h3>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+
+    <div class="news-card">
+      <div class="news-image-container">
+        <img src="https://imgs.search.brave.com/VKHhTSQDNRXl2bWZ3gFcu-R7Y5_73jywgcN6XkBCgtE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9jb25j/ZXB0LW1lbnRhbC1o/ZWFsdGgtc3ltYm9s/LXdvb2Rlbi1ibG9j/ay13b3Jkcy0zODI1/MDkyNTEuanBn" alt="Woman smiling" />
+      </div>
+      <p class="news-date">APRIL 10, 2023</p>
+      <h3 class="news-title">Mental Health Matters: Nurturing Emotional Well-Being for a Balanced and Resilient Life</h3>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-container">
+  <div class="footer-content">
+    <div class="footer-section footer-branding">
+      <div class="footer-logo"></div>
+      <img
+        src="https://res.cloudinary.com/dswldtvef/image/upload/v1757191567/cage-logo-white-transparent_bljlli.png"
+        alt="HIPAA verified badge"
+        class="hipaa-badge"
+      />
+    </div>
+
+    <div class="footer-section footer-links">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="#">Solution</a></li>
+        <li><a href="#">Recovery Centers</a></li>
+        <li><a href="#">Corrections</a></li>
+        <li><a href="#">Corporate Wellness</a></li>
+        <li><a href="#">Research & Technology</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section footer-links">
+      <h3>Customer</h3>
+      <ul>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Get Started</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Copyright ©. All Rights Reserved.</p>
+  </div>
+  
+
+</footer>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,140 @@
+  <!-- <div class="bg-shapes"><div class="blob a"></div><div class="blob b"></div></div>
+
+  <main class="panel">
+    
+    <aside class="left-hero">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="https://res.cloudinary.com/dswldtvef/image/upload/v1757181741/cage-logo-cropped_elqyqj.png" alt="CAGE logo">
+        </div>
+        <div>
+          <h1>CAGE</h1>
+          <p>Where care meets clarity</p>
+        </div>
+      </div>
+
+      <div class="hero-head">Welcome back Buddy Sign in to continue.</div>
+      <div class="hero-sub">
+        Your journey is safe with us.<br> CAGE is built to support your mind without judgment or exposure.
+      </div>
+
+      <div class="features" aria-hidden="true">
+  <div class="feature">Confidential & Secure</div>
+  <div class="feature">Trusted Care</div>
+  <div class="feature">Supportive Journey</div>
+  </div>
+
+    </aside>
+
+    
+    <section class="auth-card">
+      <form id="loginForm" autocomplete="on" novalidate>
+        <div class="field">
+          <label class="vis" for="email">Email address</label>
+          <input id="email" name="email" type="email" required placeholder="name@example.com" />
+        </div>
+
+        <div class="field">
+          <label class="vis" for="password">Password</label>
+          <input id="password" name="password" type="password" required placeholder="Enter your password" />
+          <div class="icon-right">
+            <button type="button" id="togglePwd" class="icon-btn" aria-pressed="false">Show</button>
+          </div>
+        </div>
+
+        <div class="helper">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+            <input id="remember" name="remember" type="checkbox" style="width:16px;height:16px" />
+            <span>Remember me</span>
+          </label>
+          <a href="#" style="color:var(--muted);text-decoration:none;font-weight:600;font-size:13px">Forgot?</a>
+        </div>
+
+        <button id="submitBtn" class="primary-btn" type="submit">Sign in</button>
+
+        <div class="meta">
+          <span>New here?</span>
+          <a style="color:var(--muted);text-decoration:none;font-weight:700" [routerLink]="['/signup']">Create account</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const togglePwd = document.getElementById('togglePwd');
+      const pwd = document.getElementById('password');
+      togglePwd.addEventListener('click', () => {
+        const isShown = pwd.type === 'text';
+        pwd.type = isShown ? 'password' : 'text';
+        togglePwd.textContent = isShown ? 'Show' : 'Hide';
+        togglePwd.setAttribute('aria-pressed', String(!isShown));
+      });
+    })();
+  </script> -->
+
+  <div class="login-page-wrapper">
+  <div class="bg-shapes">
+  <div class="blob a"></div>
+  <div class="blob b"></div>
+</div>
+
+<main class="panel">
+  <!-- LEFT HERO -->
+  <aside class="left-hero">
+    <div class="brand">
+      <div class="brand-logo">
+        <img src="https://res.cloudinary.com/dswldtvef/image/upload/v1757181741/cage-logo-cropped_elqyqj.png" alt="CAGE logo">
+      </div>
+      <div>
+        <h1>CAGE</h1>
+        <p>Where care meets clarity</p>
+      </div>
+    </div>
+
+    <div class="hero-head">Welcome back Buddy. Sign in to continue.</div>
+    <div class="hero-sub">
+      Your journey is safe with us.<br> CAGE is built to support your mind without judgment or exposure.
+    </div>
+
+    <div class="features" aria-hidden="true">
+      <div class="feature">Confidential & Secure</div>
+      <div class="feature">Trusted Care</div>
+      <div class="feature">Supportive Journey</div>
+    </div>
+  </aside>
+
+  <!-- RIGHT AUTH CARD -->
+  <section class="auth-card">
+    <form id="loginForm" autocomplete="on" novalidate>
+      <div class="field">
+        <label class="vis" for="email">Email address</label>
+        <input id="email" name="email" type="email" required placeholder="name@example.com" />
+      </div>
+
+      <div class="field">
+        <label class="vis" for="password">Password</label>
+        <input id="password" name="password" type="password" required placeholder="Enter your password" />
+        <div class="icon-right">
+          <button type="button" id="togglePwd" class="icon-btn" aria-pressed="false">Show</button>
+        </div>
+      </div>
+
+      <div class="helper">
+        <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+          <input id="remember" name="remember" type="checkbox" style="width:16px;height:16px" />
+          <span>Remember me</span>
+        </label>
+        <a href="#" style="color:var(--muted);text-decoration:none;font-weight:600;font-size:13px">Forgot?</a>
+      </div>
+
+      <button id="submitBtn" class="primary-btn" type="submit">Sign in</button>
+
+      <div class="meta">
+        <span>New here?</span>
+        <a style="color:var(--muted);text-decoration:none;font-weight:700" [routerLink]="['/signup']">Create account</a>
+      </div>
+    </form>
+  </section>
+</main>
+</div>

@@ -1,0 +1,64 @@
+
+
+<div class="container">
+
+  <div class="left-card">
+    <div class="brand">
+      <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png" alt="Logo" />
+
+      <div>
+        <h2>CAGE</h2>
+        <p class="tagline">Where care meets clarity</p>
+      </div>
+    </div>
+
+    <h2 class="hero-text">Welcome back Buddy. Sign in to continue.</h2>
+    <p class="hero-sub">
+      Your journey is safe with us. CAGE is built to support your mind
+      without judgment or exposure.
+    </p>
+
+    <div class="features">
+      <div class="feature">Confidential & Secure</div>
+      <div class="feature">Trusted Care</div>
+      <div class="feature">Supportive Journey</div>
+    </div>
+  </div>
+
+  
+  <div class="right-card">
+    
+    <!-- Sign-in form -->
+    <form *ngIf="isLogin" (ngSubmit)="onSignIn()">
+      <div class="field">
+        <label>Email</label>
+        <input type="email" [(ngModel)]="email" name="loginEmail" placeholder="Email" />
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="password" name="loginPassword" placeholder="Password" />
+      </div>
+      <button class="sign-up-btn" type="submit">Sign in</button>
+      <a class="login-btn" type="button" (click)="toggleAuth()"  style="text-decoration: underline;"><span>New?</span> Create account</a>
+    </form>
+
+    <!-- Sign-up form -->
+    <form *ngIf="!isLogin" (ngSubmit)="onSignUp()">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" [(ngModel)]="name" name="signupName" placeholder="Name" />
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" [(ngModel)]="email" name="signupEmail" placeholder="Email" />
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="password" name="signupPassword" placeholder="Password" />
+      </div>
+      <button class="sign-up-btn" type="submit">Sign up</button>
+     <a class="login-btn">If already exists <span type="button" style="text-decoration: underline;" (click)="toggleAuth()">Sign in</span></a>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,113 @@
+
+<div class="page-wrapper">
+<aside class="sidebar" role="navigation" aria-label="Test section navigation">
+    <div class="sidebar-logo">
+        <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png?q_auto,f_auto" alt="CAGE Mental Health Logo">
+    </div>
+    <hr>
+    <h3 class="sidebar-title">Sections</h3>
+    <ul class="sidebar-list">
+        <li><button [routerLink]="['/condition', 'depression']">Depression</button></li>
+        <li><button [routerLink]="['/condition', 'emotional-wellbeing']" class="active">Emotional Wellbeing with a Baby</button></li>
+        <li><button [routerLink]="['/condition', 'gad']">Generalised anxiety disorder</button></li>
+        <li><button [routerLink]="['/condition', 'health-anxiety']">Health Anxiety</button></li>
+        <li><button [routerLink]="['/condition', 'panic-disorder']">Panic Disorder</button></li>
+        <li><button [routerLink]="['/condition', 'social-anxiety']">Social Anxiety</button></li>
+        <li><button [routerLink]="['/condition', 'ptsd']">Post traumatic stress disorder</button></li>
+        <li><button [routerLink]="['/condition', 'ocd']">Obsessive compulsive disorder</button></li>
+        <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li>
+        <li><button [routerLink]="['/condition', 'dementia']">Dementia</button></li>
+    </ul>
+</aside>
+
+<div class="banner">
+    <div class="top-strip">
+        “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+    </div>
+</div>
+
+<main class="test-content info-box-2">
+    <div class="test-header">
+        <h2>Emotional Wellbeing with a Baby</h2>
+        <p>This assessment helps identify feelings and experiences common in the first year after having a baby.</p>
+    </div>
+
+    <div class="card info-box-2" id="wellbeing-assessment">
+        <h3>Emotional Wellbeing Assessment</h3>
+        <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+        <div class="question-box" role="group" aria-label="Wellbeing questions">
+            <label><strong>1. Feeling low or sad, or having a lack of interest or pleasure in things you normally enjoy</strong></label>
+            <div class="options">
+                <label><input type="radio" name="ewb_q1" [(ngModel)]="ewb_q1" [value]="0"> Not at all</label>
+                <label><input type="radio" name="ewb_q1" [(ngModel)]="ewb_q1" [value]="1"> Several days</label>
+                <label><input type="radio" name="ewb_q1" [(ngModel)]="ewb_q1" [value]="2"> More than half the days</label>
+                <label><input type="radio" name="ewb_q1" [(ngModel)]="ewb_q1" [value]="3"> Nearly every day</label>
+            </div>
+            
+            <label><strong>2. Feeling worried or anxious about the future, or feeling on edge</strong></label>
+            <div class="options">
+                <label><input type="radio" name="ewb_q2" [(ngModel)]="ewb_q2" [value]="0"> Not at all</label>
+                <label><input type="radio" name="ewb_q2" [(ngModel)]="ewb_q2" [value]="1"> Several days</label>
+                <label><input type="radio" name="ewb_q2" [(ngModel)]="ewb_q2" [value]="2"> More than half the days</label>
+                <label><input type="radio" name="ewb_q2" [(ngModel)]="ewb_q2" [value]="3"> Nearly every day</label>
+            </div>
+            
+            <label><strong>3. Feeling ashamed, scared, or guilty, as if something is wrong with you</strong></label>
+            <div class="options">
+                <label><input type="radio" name="ewb_q3" [(ngModel)]="ewb_q3" [value]="0"> Not at all</label>
+                <label><input type="radio" name="ewb_q3" [(ngModel)]="ewb_q3" [value]="1"> Several days</label>
+                <label><input type="radio" name="ewb_q3" [(ngModel)]="ewb_q3" [value]="2"> More than half the days</label>
+                <label><input type="radio" name="ewb_q3" [(ngModel)]="ewb_q3" [value]="3"> Nearly every day</label>
+            </div>
+            
+            <label><strong>4. Withdrawing from people or activities you used to enjoy</strong></label>
+            <div class="options">
+                <label><input type="radio" name="ewb_q4" [(ngModel)]="ewb_q4" [value]="0"> Not at all</label>
+                <label><input type="radio" name="ewb_q4" [(ngModel)]="ewb_q4" [value]="1"> Several days</label>
+                <label><input type="radio" name="ewb_q4" [(ngModel)]="ewb_q4" [value]="2"> More than half the days</label>
+                <label><input type="radio" name="ewb_q4" [(ngModel)]="ewb_q4" [value]="3"> Nearly every day</label>
+            </div>
+            
+            <label><strong>5. Feeling tense, irritable, or easily annoyed</strong></label>
+            <div class="options">
+                <label><input type="radio" name="ewb_q5" [(ngModel)]="ewb_q5" [value]="0"> Not at all</label>
+                <label><input type="radio" name="ewb_q5" [(ngModel)]="ewb_q5" [value]="1"> Several days</label>
+                <label><input type="radio" name="ewb_q5" [(ngModel)]="ewb_q5" [value]="2"> More than half the days</label>
+                <label><input type="radio" name="ewb_q5" [(ngModel)]="ewb_q5" [value]="3"> Nearly every day</label>
+            </div>
+        </div>
+        <div class="result-display">
+            <button class="save-btn" (click)="calculateEWBScore()">Calculate Score</button>
+            <p *ngIf="ewbScore !== null" class="result">Your score: {{ ewbScore }}</p>
+        </div>
+    </div>
+
+    <div class=" card  info-box-2">
+        <h3>Baby Care and Emotional Wellbeing</h3>
+        <p>Caring for a new baby is a demanding and rewarding experience. Here are some key areas that can impact both your and your baby's emotional wellbeing.</p>
+        
+        <div class="info-box">
+            <h4>Understanding Your Baby's Needs</h4>
+            <p>Your baby communicates through crying, cooing, and body language. Responding to these cues helps build a secure attachment and can reduce stress for both of you. It is okay if you don't understand their needs right away; learning takes time.</p>
+            <ul>
+                <li>**Feeding:** Whether breast or bottle feeding, focus on making it a calm, bonding experience.</li>
+                <li>**Sleeping:** Create a safe sleep environment. Sleep deprivation is a major challenge; don't hesitate to seek help from your partner, family, or a professional.</li>
+                <li>**Comforting:** Holding, rocking, and talking to your baby can soothe them and strengthen your connection.</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h4>Prioritizing Your Own Needs</h4>
+            <p>Your emotional health is critical for your baby's wellbeing. Remember that taking time for yourself is not selfish; it is essential.</p>
+            <ul>
+                <li>**Ask for Help:** Accept offers from family and friends for chores, errands, or babysitting.</li>
+                <li>**Connect with Others:** Talk to other new parents who understand your experiences.</li>
+                <li>**Rest:** Sleep when the baby sleeps, even for short periods.</li>
+                <li>**Self-Compassion:** Be kind to yourself. There is no such thing as a "perfect" parent.</li>
+            </ul>
+        </div>
+        
+        <p>If you feel overwhelmed, remember that support is available. Seeking help is a sign of strength.</p>
+    </div>
+</main>
+</div>

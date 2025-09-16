@@ -1,0 +1,373 @@
+
+/* Full screen background */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  gap: 2rem;
+}
+
+
+.left-card {
+  flex: 1;
+  max-width: 400px;
+  background: rgba(7, 8, 52, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brand img {
+  width: 70px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.hero-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.right-card {
+  flex: 1;
+  max-width: 380px;
+  background: rgba(17, 25, 40, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.field label {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: #cbd5e1;
+}
+
+.field input {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.field input:focus {
+  outline: none;
+  border: 1px solid #3b82f6;
+  background: #0f172a;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.actions a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #6366f1, #3b82f6);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.5);
+}
+
+.meta {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.meta a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sign-up-btn {
+  padding: 7px;
+  margin: 3px;
+  border-radius: 6px;
+  /* background-color: beige; */
+}
+
+/* Full screen background */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  height: 98vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  gap: 2  rem;
+}
+
+.left-card {
+  flex: 1;
+  max-width: 400px;
+  background: rgba(7, 8, 52, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brand img {
+  width: 70px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.hero-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.right-card {
+  flex: 1;
+  max-width: 380px;
+  background: rgba(17, 25, 40, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.field label {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: #cbd5e1;
+}
+
+.field input {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.field input:focus {
+  outline: none;
+  border: 1px solid #3b82f6;
+  background: #0f172a;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.actions a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+  color: #93c5fd;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #6366f1, #3b82f6);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.5);
+}
+
+.sign-up-btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 3px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sign-up-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.5);
+}
+
+.meta {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.meta a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.meta a:hover {
+  text-decoration: underline;
+  color: #93c5fd;
+}
+
+.login-btn {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+.login-btn:hover {
+  color: #93c5fd;
+}

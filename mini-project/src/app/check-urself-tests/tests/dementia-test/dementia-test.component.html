@@ -1,0 +1,235 @@
+<aside class="sidebar" role="navigation" aria-label="Test section navigation">
+  <div class="sidebar-logo">
+    <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png?q_auto,f_auto" alt="CAGE Mental Health Logo" loading="lazy" [routerLink]="['/home']">
+  </div>
+  <hr>
+  <h3 class="sidebar-title">Sections</h3>
+  <ul class="sidebar-list">
+    <li><button [routerLink]="['/condition', 'depression']" >Depression</button></li>
+    <li><button  [routerLink]="['/condition', 'emotional-wellbeing']">Emotional Wellbeing with a Baby</button></li>
+    <li><button [routerLink]="['/condition', 'gad']">Generalised anxiety disorder</button></li>
+    <li><button [routerLink]="['/condition', 'health-anxiety']">Health Anxiety</button></li>
+    <li><button [routerLink]="['/condition', 'panic-disorder']">Panic Disorder</button></li>
+    <li><button [routerLink]="['/condition', 'social-anxiety']">Social Anxiety</button></li>
+    <li><button [routerLink]="['/condition', 'ptsd']">Post traumatic stress disorder</button></li>
+    <li><button [routerLink]="['/condition', 'ocd']">Obsessive compulsive disorder</button></li>
+    <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li>
+    <li><button [routerLink]="['/condition', 'dementia']" class="active">Dementia</button></li>
+  </ul>
+</aside>
+
+
+  <!-- Header -->
+  <div class="banner"><div class="top-strip">
+      “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+    </div>
+    </div>    
+
+
+  <!-- Main Test Content -->
+  <main class="test-content">
+    <div class="test-header">
+      <h2>International HIV Dementia Scale (IHDS)</h2>
+      <p>Brief summary about the tool explaining in short its efficacy.</p>
+      <ul>
+        <li>This tool is <strong>not</strong> meant to be viewed by the patient during the test.</li>
+        <li>The provider should use it as a guide and demonstrate actions.</li>
+        <li>Timers will emit audio cues at the start and end.</li>
+        <li>Perform steps in order below.</li>
+      </ul>
+    </div>
+
+    <!-- Memory Registration -->
+    <div class="card" id="memory-registration">
+      <h3>Memory-Registration</h3>
+      <div class="words-grid">
+        <span>dog</span>
+        <span>hat</span>
+        <span>bean</span>
+        <span>red</span>
+      </div>
+      <hr />
+      <ol>
+        <li>Give four words to recall (dog, hat, bean, red) – 1 second each.</li>
+        <li>Ask patient all four words after you said them.</li>
+        <li>Repeat if patient doesn’t recall immediately.</li>
+        <li>Tell patient recall will be asked again later.</li>
+      </ol>
+    </div>
+
+    <!-- Motor Speed -->
+    <div class="card" id="motor-speed">
+      <h3>1. Motor Speed <span class="points">0–4 points</span></h3>
+      <p>Have the patient tap the first two fingers of the non-dominant hand as quickly as possible.</p>
+      <div class="images">
+        <img
+          src="https://res.cloudinary.com/dvfceqgqo/image/upload/v1757582493/Upscaled_gestured-removebg-preview_genam4.png"
+          alt="finger tap step 1"
+        />
+      </div>
+      <p class="instruction">Count the number of taps performed in 5 seconds:</p>
+      <div class="motor-row">
+        <div class="timer-box">
+          <strong class="big">{{ timeLeft }}</strong> <span>seconds</span><br />
+          <button (click)="startTimer()" [disabled]="timerRunning" class="btn">⏱ Start Timer</button>
+        </div>
+        <div class="input-box">
+          <label><strong>Record Number of Taps:</strong></label><br />
+          <input type="number" [(ngModel)]="taps" min="0" placeholder="0 or more" />
+        </div>
+        <div class="score-box">
+          <strong>Scoring:</strong>
+          <ul>
+            <li>>= 15 taps = <b>4 points</b></li>
+            <li>11–14 taps = <b>3 points</b></li>
+            <li>7–10 taps = <b>2 points</b></li>
+            <li>3–6 taps = <b>1 point</b></li>
+            <li>0–2 taps = <b>0 points</b></li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-left:auto; display:flex; flex-direction:column; align-items:flex-end;">
+        <button class="save-btn" (click)="calculateScore()">Save Score</button>
+        <p *ngIf="score !== null" class="result">Your score: {{ score }}</p>
+      </div>
+    </div>
+
+    <!-- Psychomotor Speed -->
+    <div class="card" id="psychomotor-speed">
+      <h3>2. Psychomotor Speed <span class="points">0–4 points</span></h3>
+      <p>Have the patient perform the sequence of movements with the non-dominant hand.</p>
+
+  <div class="images-2">
+    <div>
+      <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/v1757587534/Screenshot_2025-09-11_161039_upscaled_--_01-removebg-preview_qcyowj.png" alt="Step 1" class = "img-of-2">
+      <p>1. Clench hand in fist on flat surface.</p>
+    </div>
+    <span class="arrow">→</span>
+    <div>
+      <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/v1757587721/Screenshot_2025-09-11_161659_upscaled_--_02-removebg-preview_fjamms.png" alt="Step 2">
+      <p>2. Put hand flat on surface with palm down.</p>
+    </div>
+    <span class="arrow">→</span>
+    <div>
+      <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/v1757587942/Screenshot_2025-09-11_161944_upscaled--03-removebg-preview_dedoob.png" alt="Step 3">
+      <p>3. Put hand perpendicular on the side of the 5th digit.</p>
+    </div>
+  </div>
+
+  <p><strong>Demonstrate and have patient perform twice for practice.</strong></p>
+  <hr>
+
+  <p class="instruction">Count the number of sequences performed in 10 seconds:</p>
+
+  <div class="motor-row">
+    
+    <div class="timer-box">
+      <strong class="big">{{ psychTimeLeft }}</strong> <span>seconds</span><br>
+      <button (click)="startPsychTimer()" [disabled]="psychTimerRunning" class="btn">
+        ⏱ Start Timer
+      </button>
+    </div>
+
+    
+    <div class="input-box">
+      <label><strong>Record Number of Sequences:</strong></label><br>
+      <input type="number" [(ngModel)]="sequences" min="0" placeholder="0 or more">
+    </div>
+
+    
+    <div class="score-box">
+      <strong>Scoring:</strong>
+      <ul>
+        <li>>= 4 sequences = <b>4 points</b></li>
+        <li>3 sequences = <b>3 points</b></li>
+        <li>2 sequences = <b>2 points</b></li>
+        <li>1 sequence = <b>1 point</b></li>
+        <li>unable to perform = <b>0 points</b></li>
+      </ul>
+    </div>
+  </div>
+ <div style="margin-left:auto; display:flex; flex-direction:column; align-items:flex-end;">
+  <button class="save-btn" (click)="calculatePsychScore()">Save Score</button>
+  <p *ngIf="psychScore !== null" class="result">Your score: {{ psychScore }}</p>
+  </div>
+</div>
+
+
+  
+
+    <!-- Memory Recall -->
+    <div class="card" id="memory-recall">
+      <h3>3. Memory Recall <span class="points">0–4 points</span></h3>
+
+  <p style="font-size:1.25rem">
+    Ask the patient to recall the four words:<br>
+    <small>Select the words recalled below: (1 point each)</small>
+  </p>
+
+  <div class="word-boxes">
+    <label>
+      <input type="checkbox" [(ngModel)]="recallWords.dog"> dog
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="recallWords.hat"> hat
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="recallWords.bean"> bean
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="recallWords.red"> red
+    </label>
+  </div>
+
+  <hr>
+
+  <p style="font-size:1.25rem">
+    For words not recalled, prompt with a semantic clue as follows:<br>
+    <small>Select the words recalled using clue (0.5 points each)</small>
+  </p>
+
+  <div class="word-boxes">
+    <label>
+      <input type="checkbox" [(ngModel)]="clueWords.dog"> animal? dog
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="clueWords.hat"> piece of clothing? hat
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="clueWords.bean"> vegetable? bean
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="clueWords.red"> color? red
+    </label>
+  </div>
+  <div style="margin-left:auto; display:flex; flex-direction:column; align-items:flex-end;">
+  <button class="save-btn" (click)="calculateRecallScore()">Save Score</button>
+  <p *ngIf="recallScore !== null" class="result">Your score: {{ recallScore }}</p>
+  </div>
+</div>
+
+  
+
+  <!-- Footer -->
+ <div class="info-box">
+    <h3>Interpretation:</h3>
+    <ul>
+      <li>is the sum of the scores on items 1-3. The maximum possible score is 12 points. A patient with a score of ≤10 should be evaluated further for possible dementia.</li> 
+    </ul>
+  </div>
+
+  <!-- Notes -->
+   <div class="card sources">
+    <h4>Acknowledgement</h4>
+   <ul>
+      <li>The International HIV Dementia Scale (IHDS) was developed by Dr. Ned C. Sacktor, Professor of Neurology, Johns Hopkins Medicine.</li> 
+      <li>The scale is designed to assess cognitive impairment in individuals with HIV.</li>
+    </ul>
+  </div>
+  <!-- Sources -->
+  <div class="card sources">
+    <h4>Sources</h4>
+    <p>Kroenke K, Spitzer RL, Williams JB. The Patient Health Questionnaire-2: Validity of a Two-Item Depression Screener. Medical Care. 2003;41:1284-92.</p>
+  </div>
+</main>
+

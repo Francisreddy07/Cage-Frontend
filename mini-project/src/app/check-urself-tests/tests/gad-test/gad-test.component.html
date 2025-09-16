@@ -1,0 +1,320 @@
+<!-- <aside class="sidebar" role="navigation" aria-label="Test section navigation">
+  <div class="sidebar-logo">
+    <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png?q_auto,f_auto" alt="CAGE Mental Health Logo" loading="lazy" [routerLink]="['/home']">
+  </div>
+  <hr>
+  <h3 class="sidebar-title">Sections</h3>
+  <ul class="sidebar-list">
+    <li><button [routerLink]="['/condition', 'depression']">Depression</button></li>
+    <li><button  [routerLink]="['/condition', 'emotional-wellbeing']">Emotional Wellbeing with a Baby</button></li>
+    <li><button [routerLink]="['/condition', 'gad']">Generalised anxiety disorder</button></li>
+    <li><button [routerLink]="['/condition', 'health-anxiety']">Health Anxiety</button></li>
+    <li><button [routerLink]="['/condition', 'panic-disorder']">Panic Disorder</button></li>
+    <li><button [routerLink]="['/condition', 'social-anxiety']">Social Anxiety</button></li>
+    <li><button [routerLink]="['/condition', 'ptsd']">Post traumatic stress disorder</button></li>
+    <li><button [routerLink]="['/condition', 'ocd']">Obsessive compulsive disorder</button></li>
+    <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li>
+    <li><button [routerLink]="['/condition', 'dementia']">Dementia</button></li>
+  </ul>
+</aside>
+
+<div class="banner">
+  <div class="top-strip">
+    “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+  </div>
+</div>
+
+<main class="test-content">
+  <div class="test-header">
+    <h2>Anxiety Assessment (GAD-2 & GAD-7)</h2>
+    <p>Screen for anxiety with GAD-2; proceed to GAD-7 if score is 3 or higher.</p>
+  </div>
+
+  
+  <div class="card" id="gad-2">
+    <h3>GAD-2 Screening</h3>
+    <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+    <div class="question-box" role="group" aria-label="GAD-2 questions">
+      <label><strong>1. Feeling nervous, anxious, or on edge</strong></label>
+      <div class="options">
+        <label><input type="radio" name="gad2_q1" [(ngModel)]="gad2_q1" value="0"> Not at all (0)</label>
+        <label><input type="radio" name="gad2_q1" [(ngModel)]="gad2_q1" value="1"> Several days (1)</label>
+        <label><input type="radio" name="gad2_q1" [(ngModel)]="gad2_q1" value="2"> More than half the days (2)</label>
+        <label><input type="radio" name="gad2_q1" [(ngModel)]="gad2_q1" value="3"> Nearly every day (3)</label>
+      </div>
+      <label><strong>2. Not being able to stop or control worrying</strong></label>
+      <div class="options">
+        <label><input type="radio" name="gad2_q2" [(ngModel)]="gad2_q2" value="0"> Not at all (0)</label>
+        <label><input type="radio" name="gad2_q2" [(ngModel)]="gad2_q2" value="1"> Several days (1)</label>
+        <label><input type="radio" name="gad2_q2" [(ngModel)]="gad2_q2" value="2"> More than half the days (2)</label>
+        <label><input type="radio" name="gad2_q2" [(ngModel)]="gad2_q2" value="3"> Nearly every day (3)</label>
+      </div>
+    </div>
+    <div style="margin-left:auto; display:flex; flex-direction:column; align-items:flex-end;">
+      <button class="save-btn" (click)="calculateGad2Score()">Calculate Score</button>
+      <p *ngIf="gad2Score !== null" class="result">Your GAD-2 score: {{ gad2Score }}</p>
+      <p *ngIf="gad2Score !== null && gad2Score >= 3" class="result" style="color: #ec1458;">Score ≥ 3, proceed to GAD-7 below.</p>
+    </div>
+  </div>
+
+  
+  <div class="card" id="gad-7" *ngIf="showGad7">
+    <h3>GAD-7 Assessment</h3>
+    <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+    <div class="question-box" role="group" aria-label="GAD-7 questions">
+      <label><strong>1. Feeling nervous, anxious, or on edge</strong></label>
+      <div class="options">
+        <label><input type="radio" name="gad7_q1" [(ngModel)]="gad7_q1" value="0"> Not at all (0)</label>
+        <label><input type="radio" name="gad7_q1" [(ngModel)]="gad7_q1" value="1"> Several days (1)</label>
+        <label><input type="radio" name="gad7_q1" [(ngModel)]="gad7_q1" value="2"> More than half the days (2)</label>
+        <label><input type="radio" name="gad7_q1" [(ngModel)]="gad7_q1" value="3"> Nearly every day (3)</label>
+      </div>
+      <label><strong>2. Not being able to stop or control worrying</strong></label>
+      <div class="options">
+        <label><input type="radio" name="gad7_q2" [(ngModel)]="gad7_q2" value="0"> Not at all (0)</label>
+        <label><input type="radio" name="gad7_q2" [(ngModel)]="gad7_q2" value="1"> Several days (1)</label>
+        <label><input type="radio" name="gad7_q2" [(ngModel)]="gad7_q2" value="2"> More than half the days (2)</label>
+        <label><input type="radio" name="gad7_q2" [(ngModel)]="gad7_q2" value="3"> Nearly every day (3)</label>
+      </div>
+      <label><strong>3. Worrying too much about different things</strong></label>
+      <div class="options">
+        <label><input type="radio" name="gad7_q3" [(ngModel)]="gad7_q3" value="0"> Not at all (0)</label>
+        <label><input type="radio" name="gad7_q3" [(ngModel)]="gad7_q3" value="1"> Several days (1)</label>
+        <label><input type="radio" name="gad7_q3" [(ngModel)]="gad7_q3" value="2"> More than half the days (2)</label>
+        <label><input type="radio" name="gad7_q3" [(ngModel)]="gad7_q3" value="3"> Nearly every day (3)</label>
+      </div>
+      <label><strong>4. Trouble relaxing</strong></label>
+      <div class="options">
+        <label><input type="radio" name="gad7_q4" [(ngModel)]="gad7_q4" value="0"> Not at all (0)</label>
+        <label><input type="radio" name="gad7_q4" [(ngModel)]="gad7_q4" value="1"> Several days (1)</label>
+        <label><input type="radio" name="gad7_q4" [(ngModel)]="gad7_q4" value="2"> More than half the days (2)</label>
+        <label><input type="radio" name="gad7_q4" [(ngModel)]="gad7_q4" value="3"> Nearly every day (3)</label>
+      </div>
+      <label><strong>5. Being so restless that it’s hard to sit still</strong></label>
+      <div class="options">
+        <label><input type="radio" name="gad7_q5" [(ngModel)]="gad7_q5" value="0"> Not at all (0)</label>
+        <label><input type="radio" name="gad7_q5" [(ngModel)]="gad7_q5" value="1"> Several days (1)</label>
+        <label><input type="radio" name="gad7_q5" [(ngModel)]="gad7_q5" value="2"> More than half the days (2)</label>
+        <label><input type="radio" name="gad7_q5" [(ngModel)]="gad7_q5" value="3"> Nearly every day (3)</label>
+      </div>
+      <label><strong>6. Becoming easily annoyed or irritable</strong></label>
+      <div class="options">
+        <label><input type="radio" name="gad7_q6" [(ngModel)]="gad7_q6" value="0"> Not at all (0)</label>
+        <label><input type="radio" name="gad7_q6" [(ngModel)]="gad7_q6" value="1"> Several days (1)</label>
+        <label><input type="radio" name="gad7_q6" [(ngModel)]="gad7_q6" value="2"> More than half the days (2)</label>
+        <label><input type="radio" name="gad7_q6" [(ngModel)]="gad7_q6" value="3"> Nearly every day (3)</label>
+      </div>
+      <label><strong>7. Feeling afraid as if something awful might happen</strong></label>
+      <div class="options">
+        <label><input type="radio" name="gad7_q7" [(ngModel)]="gad7_q7" value="0"> Not at all (0)</label>
+        <label><input type="radio" name="gad7_q7" [(ngModel)]="gad7_q7" value="1"> Several days (1)</label>
+        <label><input type="radio" name="gad7_q7" [(ngModel)]="gad7_q7" value="2"> More than half the days (2)</label>
+        <label><input type="radio" name="gad7_q7" [(ngModel)]="gad7_q7" value="3"> Nearly every day (3)</label>
+      </div>
+    </div>
+    <div style="margin-left:auto; display:flex; flex-direction:column; align-items:flex-end;">
+      <button class="save-btn" (click)="calculateGad7Score()">Calculate Score</button>
+      <p *ngIf="gad7Score !== null" class="result">Your GAD-7 score: {{ gad7Score }}</p>
+    </div>
+  </div>
+</main> -->
+
+<aside class="sidebar" role="navigation" aria-label="Test section navigation">
+    <div class="sidebar-logo">
+        <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png?q_auto,f_auto" alt="CAGE Mental Health Logo">
+    </div>
+    <hr>
+    <h3 class="sidebar-title">Sections</h3>
+    <ul class="sidebar-list">
+        <li><button [routerLink]="['/condition', 'depression']">Depression</button></li>
+        <li><button [routerLink]="['/condition', 'emotional-wellbeing']">Emotional Wellbeing with a Baby</button></li>
+        <li><button [routerLink]="['/condition', 'gad']" class="active">Generalised anxiety disorder</button></li>
+        <li><button [routerLink]="['/condition', 'health-anxiety']">Health Anxiety</button></li>
+        <li><button [routerLink]="['/condition', 'panic-disorder']">Panic Disorder</button></li>
+        <li><button [routerLink]="['/condition', 'social-anxiety']">Social Anxiety</button></li>
+        <li><button [routerLink]="['/condition', 'ptsd']">Post traumatic stress disorder</button></li>
+        <li><button [routerLink]="['/condition', 'ocd']">Obsessive compulsive disorder</button></li>
+        <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li>
+        <li><button [routerLink]="['/condition', 'dementia']">Dementia</button></li>
+    </ul>
+</aside>
+
+<div class="banner">
+    <div class="top-strip">
+        “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+    </div>
+</div>
+
+<main class="test-content">
+    <div class="test-header">
+        <h2>Anxiety Assessment (GAD-2 & GAD-7)</h2>
+        <p>Screen for anxiety with GAD-2; proceed to GAD-7 if your score is 3 or higher.</p>
+    </div>
+
+    <div class="card" id="gad-2">
+        <h3>GAD-2 Screening</h3>
+        <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+        <div class="question-box" role="group" aria-label="GAD-2 questions">
+            <label><strong>1. Feeling nervous, anxious, or on edge</strong></label>
+            <div class="options">
+                <label><input type="radio" name="gad2_q1" [(ngModel)]="gad2_q1" [value]="0"> Not at all (0)</label>
+                <label><input type="radio" name="gad2_q1" [(ngModel)]="gad2_q1" [value]="1"> Several days (1)</label>
+                <label><input type="radio" name="gad2_q1" [(ngModel)]="gad2_q1" [value]="2"> More than half the days (2)</label>
+                <label><input type="radio" name="gad2_q1" [(ngModel)]="gad2_q1" [value]="3"> Nearly every day (3)</label>
+            </div>
+            <label><strong>2. Not being able to stop or control worrying</strong></label>
+            <div class="options">
+                <label><input type="radio" name="gad2_q2" [(ngModel)]="gad2_q2" [value]="0"> Not at all (0)</label>
+                <label><input type="radio" name="gad2_q2" [(ngModel)]="gad2_q2" [value]="1"> Several days (1)</label>
+                <label><input type="radio" name="gad2_q2" [(ngModel)]="gad2_q2" [value]="2"> More than half the days (2)</label>
+                <label><input type="radio" name="gad2_q2" [(ngModel)]="gad2_q2" [value]="3"> Nearly every day (3)</label>
+            </div>
+        </div>
+        <div class="result-display">
+            <button class="save-btn" (click)="calculateGad2Score()">Calculate Score</button>
+            <p *ngIf="gad2Score !== null" class="result">Your GAD-2 score: {{ gad2Score }}</p>
+            <p *ngIf="gad2Score !== null && gad2Score >= 3" class="result result-highlight">Score ≥ 3, proceed to GAD-7 below.</p>
+        </div>
+    </div>
+
+    <div class="card" id="gad-7" *ngIf="showGad7">
+        <h3>GAD-7 Assessment</h3>
+        <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+        <div class="question-box" role="group" aria-label="GAD-7 questions">
+            <label><strong>1. Feeling nervous, anxious, or on edge</strong></label>
+            <div class="options">
+                <label><input type="radio" name="gad7_q1" [(ngModel)]="gad7_q1" [value]="0"> Not at all (0)</label>
+                <label><input type="radio" name="gad7_q1" [(ngModel)]="gad7_q1" [value]="1"> Several days (1)</label>
+                <label><input type="radio" name="gad7_q1" [(ngModel)]="gad7_q1" [value]="2"> More than half the days (2)</label>
+                <label><input type="radio" name="gad7_q1" [(ngModel)]="gad7_q1" [value]="3"> Nearly every day (3)</label>
+            </div>
+            <label><strong>2. Not being able to stop or control worrying</strong></label>
+            <div class="options">
+                <label><input type="radio" name="gad7_q2" [(ngModel)]="gad7_q2" [value]="0"> Not at all (0)</label>
+                <label><input type="radio" name="gad7_q2" [(ngModel)]="gad7_q2" [value]="1"> Several days (1)</label>
+                <label><input type="radio" name="gad7_q2" [(ngModel)]="gad7_q2" [value]="2"> More than half the days (2)</label>
+                <label><input type="radio" name="gad7_q2" [(ngModel)]="gad7_q2" [value]="3"> Nearly every day (3)</label>
+            </div>
+            <label><strong>3. Worrying too much about different things</strong></label>
+            <div class="options">
+                <label><input type="radio" name="gad7_q3" [(ngModel)]="gad7_q3" [value]="0"> Not at all (0)</label>
+                <label><input type="radio" name="gad7_q3" [(ngModel)]="gad7_q3" [value]="1"> Several days (1)</label>
+                <label><input type="radio" name="gad7_q3" [(ngModel)]="gad7_q3" [value]="2"> More than half the days (2)</label>
+                <label><input type="radio" name="gad7_q3" [(ngModel)]="gad7_q3" [value]="3"> Nearly every day (3)</label>
+            </div>
+            <label><strong>4. Trouble relaxing</strong></label>
+            <div class="options">
+                <label><input type="radio" name="gad7_q4" [(ngModel)]="gad7_q4" [value]="0"> Not at all (0)</label>
+                <label><input type="radio" name="gad7_q4" [(ngModel)]="gad7_q4" [value]="1"> Several days (1)</label>
+                <label><input type="radio" name="gad7_q4" [(ngModel)]="gad7_q4" [value]="2"> More than half the days (2)</label>
+                <label><input type="radio" name="gad7_q4" [(ngModel)]="gad7_q4" [value]="3"> Nearly every day (3)</label>
+            </div>
+            <label><strong>5. Being so restless that it’s hard to sit still</strong></label>
+            <div class="options">
+                <label><input type="radio" name="gad7_q5" [(ngModel)]="gad7_q5" [value]="0"> Not at all (0)</label>
+                <label><input type="radio" name="gad7_q5" [(ngModel)]="gad7_q5" [value]="1"> Several days (1)</label>
+                <label><input type="radio" name="gad7_q5" [(ngModel)]="gad7_q5" [value]="2"> More than half the days (2)</label>
+                <label><input type="radio" name="gad7_q5" [(ngModel)]="gad7_q5" [value]="3"> Nearly every day (3)</label>
+            </div>
+            <label><strong>6. Becoming easily annoyed or irritable</strong></label>
+            <div class="options">
+                <label><input type="radio" name="gad7_q6" [(ngModel)]="gad7_q6" [value]="0"> Not at all (0)</label>
+                <label><input type="radio" name="gad7_q6" [(ngModel)]="gad7_q6" [value]="1"> Several days (1)</label>
+                <label><input type="radio" name="gad7_q6" [(ngModel)]="gad7_q6" [value]="2"> More than half the days (2)</label>
+                <label><input type="radio" name="gad7_q6" [(ngModel)]="gad7_q6" [value]="3"> Nearly every day (3)</label>
+            </div>
+            <label><strong>7. Feeling afraid as if something awful might happen</strong></label>
+            <div class="options">
+                <label><input type="radio" name="gad7_q7" [(ngModel)]="gad7_q7" [value]="0"> Not at all (0)</label>
+                <label><input type="radio" name="gad7_q7" [(ngModel)]="gad7_q7" [value]="1"> Several days (1)</label>
+                <label><input type="radio" name="gad7_q7" [(ngModel)]="gad7_q7" [value]="2"> More than half the days (2)</label>
+                <label><input type="radio" name="gad7_q7" [(ngModel)]="gad7_q7" [value]="3"> Nearly every day (3)</label>
+            </div>
+        </div>
+        <div class="result-display">
+            <button class="save-btn" (click)="calculateGad7Score()">Calculate Score</button>
+            <p *ngIf="gad7Score !== null" class="result">Your GAD-7 score: {{ gad7Score }}</p>
+        </div>
+    </div>
+    
+    
+        
+        <div class="info-box info-box-2">
+            <p>When screening for anxiety disorders, a score of <strong>8 or greater</strong> represents a reasonable cut-point for identifying probable cases of generalized anxiety disorder; further diagnostic assessment is warranted to determine the presence and type of anxiety disorder. Using a cut-off of 8 the GAD-7 has a sensitivity of 92% and specificity of 76% for diagnosis generalized anxiety disorder. <sup>2,3</sup></p>
+        </div>
+
+        <div class="info-box info-box-2">
+            <h3>Anxiety Severity Cut-offs</h3>
+            <ul>
+                <li><strong>Score 0-4:</strong> Minimal Anxiety</li>
+                <li><strong>Score 5-9:</strong> Mild Anxiety</li>
+                <li><strong>Score 10-14:</strong> Moderate Anxiety</li>
+                <li><strong>Score greater than 15:</strong> Severe Anxiety</li>
+            </ul>
+        </div>
+        <div class = "card info-box-2">
+        <h3>Performance as Screening Tool for Anxiety Disorders</h3>
+        <p>Although designed as a screening tool for generalized anxiety, the GAD-7 is also performs reasonably well as a screening tool for three other common anxiety disorders—Panic Disorder, Social Anxiety Disorder, and Posttraumatic Stress Disorder. <sup>3</sup></p>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Test</th>
+                    <th>Sensitivity</th>
+                    <th>Specificity</th>
+                    <th>Positive Likelihood Ratio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Generalized Anxiety Disorder</td>
+                    <td>89%</td>
+                    <td>82%</td>
+                    <td>5.1</td>
+                </tr>
+                <tr>
+                    <td>Panic Disorder</td>
+                    <td>74%</td>
+                    <td>81%</td>
+                    <td>3.9</td>
+                </tr>
+                <tr>
+                    <td>Social Anxiety Disorder</td>
+                    <td>72%</td>
+                    <td>80%</td>
+                    <td>3.6</td>
+                </tr>
+                <tr>
+                    <td>Post-Traumatic Stress Disorder</td>
+                    <td>66%</td>
+                    <td>81%</td>
+                    <td>3.5</td>
+                </tr>
+                <tr>
+                    <td>Any anxiety disorder</td>
+                    <td>68%</td>
+                    <td>88%</td>
+                    <td>5.5</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <caption>Perfx ormance of GAD-7 as Screening Tool for Anxiety Disorders³ (Using GAD-7 Score Cut-off of ≥10)</caption> -->
+        </div>
+        <!-- <div class= "card info-box-2"> -->
+        <div class="sources card info-box-2">
+            <h4>Sources</h4>
+            <ol>
+                <li>Spitzer RL, Kroenke K, Williams JB, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. Arch Intern Med. 2006;166:1092-7.</li>
+                <li>Plummer F, Manea L, Trepel D, McMillan D. Screening for anxiety disorders with the GAD-7 and GAD-2: a systematic review and diagnostic metaanalysis. Gen Hosp Psychiatry. 2016;39:24-31.</li>
+                <li>Kroenke K, Spitzer RL, Williams JB, Monahan PO, Löwe B. Anxiety disorders in primary care: prevalence, impairment, comorbidity, and detection. Ann Intern Med. 2007;146:317-25.</li>
+            </ol>
+            <br>
+        </div>
+            <div class = "card info-box-2">
+            <h4>Acknowledgement</h4>
+            <p>The GAD-7 was developed by Drs. Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke and colleagues, with an educational grant from Pfizer Inc. No permission required to reproduce, translate, display or distribute.</p>
+            </div>
+       
+        <!-- </div> -->
+    
+</main>
