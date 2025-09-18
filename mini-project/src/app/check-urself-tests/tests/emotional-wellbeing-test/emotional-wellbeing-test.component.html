@@ -76,7 +76,7 @@
             </div>
         </div>
         <div class="result-display">
-            <button class="save-btn" (click)="calculateEWBScore()">Calculate Score</button>
+            <button class="save-btn" (click)="calculateEWBScore()"  [routerLink]="['/test-score', 'emotional-wellbeing']">Calculate Score</button>
             <p *ngIf="ewbScore !== null" class="result">Your score: {{ ewbScore }}</p>
         </div>
     </div>

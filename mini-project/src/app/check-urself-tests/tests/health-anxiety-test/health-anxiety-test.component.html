@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="result-display">
-                <button class="save-btn" (click)="calculateHAScore()">Calculate Score</button>
+                <button class="save-btn" (click)="calculateHAScore()"  [routerLink]="['/test-score', 'health-anxiety']">Calculate Score</button>
                 <p *ngIf="haScore !== null" class="result">Your score: {{ haScore }}</p>
             </div>
         </div>

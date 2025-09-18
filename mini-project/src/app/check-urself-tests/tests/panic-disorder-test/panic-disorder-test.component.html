@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="result-display">
-                <button class="save-btn" (click)="calculatePDScore()">Calculate Score</button>
+                <button class="save-btn" (click)="calculatePDScore()"  [routerLink]="['/test-score', 'panic-disorder']">Calculate Score</button>
                 <p *ngIf="pdScore !== null" class="result">Your score: {{ pdScore }}</p>
             </div>
         </div>

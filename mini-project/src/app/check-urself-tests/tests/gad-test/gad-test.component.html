@@ -111,7 +111,7 @@
             </div>
         </div>
         <div class="result-display">
-            <button class="save-btn" (click)="calculateGad7Score()">Calculate Score</button>
+            <button class="save-btn" (click)="calculateGad7Score()"  [routerLink]="['/test-score', 'gad']">Calculate Score</button>
             <p *ngIf="gad7Score !== null" class="result">Your GAD-7 score: {{ gad7Score }}</p>
         </div>
     </div>

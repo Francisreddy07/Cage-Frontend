@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="result-display">
-                <button class="save-btn" (click)="calculateOCDScore()">Calculate Score</button>
+                <button class="save-btn" (click)="calculateOCDScore()"  [routerLink]="['/test-score', 'ocd']">Calculate Score</button>
                 <p *ngIf="ocdScore !== null" class="result">Your score: {{ ocdScore }}</p>
             </div>
         </div>

@@ -193,7 +193,7 @@
     </label>
   </div>
   <div style="margin-left:auto; display:flex; flex-direction:column; align-items:flex-end;">
-  <button class="save-btn" (click)="calculateRecallScore();calculateTotalScore()">Save Score</button>
+  <button class="save-btn" (click)="calculateRecallScore();calculateTotalScore()" [routerLink]="['/test-score', 'dementia']">Save Score</button>
   <p *ngIf="recallScore !== null" class="result">Your score: {{ recallScore }}</p>
   </div>
 </div>

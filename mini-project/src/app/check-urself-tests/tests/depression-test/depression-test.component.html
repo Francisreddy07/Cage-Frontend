@@ -126,7 +126,7 @@
       </div>
     </div>
     <div style="margin-left:auto; display:flex; flex-direction:column; align-items:flex-end;">
-      <button class="save-btn" (click)="calculatePhq9Score()" aria-label="Calculate PHQ-9 score">Calculate Score</button>
+      <button class="save-btn" (click)="calculatePhq9Score()" aria-label="Calculate PHQ-9 score"  [routerLink]="['/test-score', 'depression']">Calculate Score</button>
       <p *ngIf="phq9Score !== null" class="result">Your PHQ-9 score: {{ phq9Score }}</p>
     </div>
   </div>

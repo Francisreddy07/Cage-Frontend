@@ -22,7 +22,7 @@
     <div class="hero-text">
       <h1>Know Your Mind, Early<br>Track Your Well-Being</h1>
       <p>Real-time assessments for a healthier mind</p>
-      <button class="btn-demo" [routerLink]="['/answer-urself']">Answer Urself</button>
+      <button class="btn-demo" [routerLink]="['/answer-urself']" (click)="takeTest()">Answer Urself</button>
     </div>
   </section>
 </div>
@@ -36,15 +36,12 @@
     </div>
     <div class="visuals">
       <div class="tags">
-        <span class="tag words">WORDS</span>
-        <span class="tag audio">AUDIO</span>
-        <span class="tag visual">VISUAL</span>
+        <span class="tag words">SMART</span>
+        <span class="tag audio">MIND</span>
+        <span class="tag visual">CARE</span>
       </div>
       <div class="image-box">
         <img src="https://imgs.search.brave.com/RVllniJFTiac7adoY7VRXq9pg4_-wCHBHrMbry7oo-Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWluZHNjcmVlbi5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjEvMTIvQWJvdXQt/UGFnZS1JbWFnZS5q/cGc" alt="Woman analyzing data">
-        <!-- <div class="chart">
-          <img src="chart-placeholder.png" alt="Chart overlay">
-        </div> -->
       </div>
     </div>
   </section>
