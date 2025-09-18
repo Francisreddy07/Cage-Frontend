@@ -1,1 +1,118 @@
-<p>panic-disorder-test works!</p>
+<div class="page-wrapper">
+    <aside class="sidebar" role="navigation" aria-label="Test section navigation">
+        <div class="sidebar-logo">
+            <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png?q_auto,f_auto" alt="CAGE Mental Health Logo">
+        </div>
+        <hr>
+        <h3 class="sidebar-title">Sections</h3>
+        <ul class="sidebar-list">
+            <li><button [routerLink]="['/condition', 'depression']">Depression</button></li>
+            <li><button [routerLink]="['/condition', 'emotional-wellbeing']">Emotional Wellbeing with a Baby</button></li>
+            <li><button [routerLink]="['/condition', 'gad']">Generalised anxiety disorder</button></li>
+            <li><button [routerLink]="['/condition', 'health-anxiety']">Health Anxiety</button></li>
+            <li><button [routerLink]="['/condition', 'panic-disorder']" class="active">Panic Disorder</button></li>
+            <li><button [routerLink]="['/condition', 'ptsd']">Post traumatic stress disorder</button></li>
+            <li><button [routerLink]="['/condition', 'ocd']">Obsessive compulsive disorder</button></li>
+            <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li>
+            <li><button [routerLink]="['/condition', 'dementia']">Dementia</button></li>
+        </ul>
+    </aside>
+
+    <div class="banner">
+        <div class="top-strip">
+            “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+        </div>
+    </div>
+
+    <main class="test-content info-box-2">
+        <div class="test-header">
+            <h2>Panic Disorder</h2>
+            <p>This assessment helps identify common symptoms and experiences related to panic disorder.</p>
+        </div>
+
+        <div class="card info-box-2" id="panic-disorder-assessment">
+            <h3>Panic Disorder Assessment</h3>
+            <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+            <div class="question-box" role="group" aria-label="Panic disorder questions">
+                <label><strong>1. Having sudden and unexpected feelings of intense fear or discomfort that peak within minutes.</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="pd_q1" [(ngModel)]="pd_q1" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="pd_q1" [(ngModel)]="pd_q1" [value]="1"> Several days</label>
+                    <label><input type="radio" name="pd_q1" [(ngModel)]="pd_q1" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="pd_q1" [(ngModel)]="pd_q1" [value]="3"> Nearly every day</label>
+                </div>
+
+                <label><strong>2. Worrying about having another panic attack.</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="pd_q2" [(ngModel)]="pd_q2" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="pd_q2" [(ngModel)]="pd_q2" [value]="1"> Several days</label>
+                    <label><input type="radio" name="pd_q2" [(ngModel)]="pd_q2" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="pd_q2" [(ngModel)]="pd_q2" [value]="3"> Nearly every day</label>
+                </div>
+
+                <label><strong>3. Avoiding places or situations because you are afraid of having a panic attack there.</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="pd_q3" [(ngModel)]="pd_q3" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="pd_q3" [(ngModel)]="pd_q3" [value]="1"> Several days</label>
+                    <label><input type="radio" name="pd_q3" [(ngModel)]="pd_q3" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="pd_q3" [(ngModel)]="pd_q3" [value]="3"> Nearly every day</label>
+                </div>
+
+                <label><strong>4. Feeling your heart pound or race, or having palpitations, during these attacks.</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="pd_q4" [(ngModel)]="pd_q4" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="pd_q4" [(ngModel)]="pd_q4" [value]="1"> Several days</label>
+                    <label><input type="radio" name="pd_q4" [(ngModel)]="pd_q4" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="pd_q4" [(ngModel)]="pd_q4" [value]="3"> Nearly every day</label>
+                </div>
+
+                <label><strong>5. Feeling a sense of unreality, or that you are detached from yourself, during an attack.</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="pd_q5" [(ngModel)]="pd_q5" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="pd_q5" [(ngModel)]="pd_q5" [value]="1"> Several days</label>
+                    <label><input type="radio" name="pd_q5" [(ngModel)]="pd_q5" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="pd_q5" [(ngModel)]="pd_q5" [value]="3"> Nearly every day</label>
+                </div>
+                
+                <label><strong>6. Having a fear of "going crazy," losing control, or dying during an attack.</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="pd_q6" [(ngModel)]="pd_q6" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="pd_q6" [(ngModel)]="pd_q6" [value]="1"> Several days</label>
+                    <label><input type="radio" name="pd_q6" [(ngModel)]="pd_q6" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="pd_q6" [(ngModel)]="pd_q6" [value]="3"> Nearly every day</label>
+                </div>
+            </div>
+            <div class="result-display">
+                <button class="save-btn" (click)="calculatePDScore()">Calculate Score</button>
+                <p *ngIf="pdScore !== null" class="result">Your score: {{ pdScore }}</p>
+            </div>
+        </div>
+
+        <div class="card info-box-2">
+            <h3>Understanding Panic Disorder</h3>
+            <p>Panic disorder is a type of anxiety disorder characterized by repeated, unexpected panic attacks. These are sudden periods of intense fear that may include physical symptoms such as a racing heart, shortness of breath, or dizziness. While a panic attack can be frightening, it is not life-threatening.</p>
+
+            <div class="info-box">
+                <h4>Common Symptoms</h4>
+                <p>Panic attacks often involve a combination of physical and psychological symptoms that can be overwhelming. Recognizing these can be the first step towards seeking help.</p>
+                <ul>
+                    <li><span style="font-weight: bolder;">Physical Symptoms:</span> Pounding heart, sweating, trembling, shortness of breath, and chest pain.</li>
+                    <li><span style="font-weight: bolder;">Psychological Symptoms:</span>  Intense fear of dying, losing control, or "going crazy," a sense of unreality, and a feeling of detachment.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>Coping Strategies</h4>
+                <p>Learning to manage and cope with panic attacks can reduce their frequency and intensity. Here are some strategies that can help.</p>
+                <ul>
+                    <li><span style="font-weight:bolder">Breathing Exercises:</span> Practice slow, deep breathing to help calm your body's "fight or flight" response.</li>
+                    <li><span style="font-weight: bolder;">Grounding Techniques:</span> Focus on your five senses to bring your awareness back to the present moment.</li>
+                    <li><span style="font-weight:bolder">Professional Help:</span> Cognitive Behavioral Therapy (CBT) and other forms of therapy can be highly effective in treating panic disorder.</li>
+                    <li><span style="font-weight: bolder;">Lifestyle Adjustments:</span> Regular exercise, a balanced diet, and avoiding stimulants like caffeine can help.</li>
+                </ul>
+            </div>
+
+            <p>If you or someone you know is struggling with panic attacks, please consider seeking professional help. You are not alone, and recovery is possible.</p>
+        </div>
+    </main>
+</div>

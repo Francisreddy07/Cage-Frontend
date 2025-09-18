@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ServiceService } from '../../../service.service';
 
 @Component({
   selector: 'app-dementia-test',
@@ -11,15 +12,9 @@ import { RouterLink } from '@angular/router';
 })
 export class DementiaTestComponent {
 
- @ViewChild('memoryRegistration')
-  memoryRegistration!: ElementRef;
-  @ViewChild('motorSpeed')
-  motorSpeed!: ElementRef;
-  @ViewChild('psychomotorSpeed')
-  psychomotorSpeed!: ElementRef;
-  @ViewChild('memoryRecall')
-  memoryRecall!: ElementRef;
+    constructor(private router: Router, private Service: ServiceService) {}
 
+  dementiaScore: string = "dementiaScore"
   timeLeft: number = 5;
   psychTimeLeft: number = 10;
   timerRunning: boolean = false;
@@ -82,5 +77,12 @@ export class DementiaTestComponent {
       else if (this.clueWords[key]) score += 0.5;
     }
     this.recallScore = score;
+  }
+
+  calculateTotalScore(){
+    let total = 0;
+    total = (this.score || 0) + (this.psychScore || 0) + (this.recallScore || 0);
+    const payload = { total: total,name:"dementia",userId :localStorage.getItem('userId') };
+    this.Service.savePhq2Result(payload).subscribe();
   }
 }

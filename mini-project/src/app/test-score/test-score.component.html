@@ -1,0 +1,23 @@
+
+
+<div class="container">
+  <div class="result-card">
+    
+    <h2 class="section-title">{{this.illness | titlecase}} Score</h2>
+    <div class="score-box">{{ phq9.total }}</div>
+    <h3 class="section-subtitle">Depression Severity</h3>
+    <div class="interpretation">
+      {{ getPhq9Interpretation(phq9.total) }}
+    </div>
+    <h3 class="section-subtitle">Proposed Treatment Actions</h3>
+    <div class="interpretation">
+      {{ getPhq9Action(phq9.total) }}
+    </div>
+    <h3 class="section-subtitle">Positive Predictive Value (PPV*)</h3>
+    <div class="interpretation">
+      {{ getPhq2PPV(phq9.total) }}
+    </div>
+    <button class="back-btn" style="margin-left:auto; display:flex; flex-direction:column;" [routerLink]="['/condition', illness]" aria-label="Go back to depression assessment">Back</button>
+  </div>
+  
+</div>

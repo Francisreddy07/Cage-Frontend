@@ -10,23 +10,19 @@
     <li><button [routerLink]="['/condition', 'gad']">Generalised anxiety disorder</button></li>
     <li><button [routerLink]="['/condition', 'health-anxiety']">Health Anxiety</button></li>
     <li><button [routerLink]="['/condition', 'panic-disorder']">Panic Disorder</button></li>
-    <li><button [routerLink]="['/condition', 'social-anxiety']">Social Anxiety</button></li>
     <li><button [routerLink]="['/condition', 'ptsd']">Post traumatic stress disorder</button></li>
     <li><button [routerLink]="['/condition', 'ocd']">Obsessive compulsive disorder</button></li>
-    <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li>
+    <!-- <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li> -->
     <li><button [routerLink]="['/condition', 'dementia']" class="active">Dementia</button></li>
   </ul>
 </aside>
 
 
-  <!-- Header -->
   <div class="banner"><div class="top-strip">
       “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
     </div>
     </div>    
 
-
-  <!-- Main Test Content -->
   <main class="test-content">
     <div class="test-header">
       <h2>International HIV Dementia Scale (IHDS)</h2>
@@ -39,7 +35,6 @@
       </ul>
     </div>
 
-    <!-- Memory Registration -->
     <div class="card" id="memory-registration">
       <h3>Memory-Registration</h3>
       <div class="words-grid">
@@ -57,7 +52,6 @@
       </ol>
     </div>
 
-    <!-- Motor Speed -->
     <div class="card" id="motor-speed">
       <h3>1. Motor Speed <span class="points">0–4 points</span></h3>
       <p>Have the patient tap the first two fingers of the non-dominant hand as quickly as possible.</p>
@@ -94,7 +88,6 @@
       </div>
     </div>
 
-    <!-- Psychomotor Speed -->
     <div class="card" id="psychomotor-speed">
       <h3>2. Psychomotor Speed <span class="points">0–4 points</span></h3>
       <p>Have the patient perform the sequence of movements with the non-dominant hand.</p>
@@ -155,9 +148,6 @@
 </div>
 
 
-  
-
-    <!-- Memory Recall -->
     <div class="card" id="memory-recall">
       <h3>3. Memory Recall <span class="points">0–4 points</span></h3>
 
@@ -203,14 +193,11 @@
     </label>
   </div>
   <div style="margin-left:auto; display:flex; flex-direction:column; align-items:flex-end;">
-  <button class="save-btn" (click)="calculateRecallScore()">Save Score</button>
+  <button class="save-btn" (click)="calculateRecallScore();calculateTotalScore()">Save Score</button>
   <p *ngIf="recallScore !== null" class="result">Your score: {{ recallScore }}</p>
   </div>
 </div>
 
-  
-
-  <!-- Footer -->
  <div class="info-box">
     <h3>Interpretation:</h3>
     <ul>
@@ -218,7 +205,6 @@
     </ul>
   </div>
 
-  <!-- Notes -->
    <div class="card sources">
     <h4>Acknowledgement</h4>
    <ul>
@@ -226,7 +212,7 @@
       <li>The scale is designed to assess cognitive impairment in individuals with HIV.</li>
     </ul>
   </div>
-  <!-- Sources -->
+
   <div class="card sources">
     <h4>Sources</h4>
     <p>Kroenke K, Spitzer RL, Williams JB. The Patient Health Questionnaire-2: Validity of a Two-Item Depression Screener. Medical Care. 2003;41:1284-92.</p>

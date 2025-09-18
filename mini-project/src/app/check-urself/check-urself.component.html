@@ -12,73 +12,8 @@
     </nav>
     <div class="actions">
       <a href="#">Log In</a>
-      <!-- <button class="btn-demo">Answer Urself</button> -->
     </div>
   </header>
-
-  <!-- <div class="condition-page">
-  
-  <section class="condition-hero">
-    <h1>Depression</h1>
-    <p>
-      Depression is more than sadness—it’s a medical condition that affects mood, thoughts, and daily life. 
-      Understanding it is the first step toward recovery.
-    </p>
-  </section>
-
-
-  <div class="condition-container">
-    <div class="condition-card">
-      <h2>What is Depression?</h2>
-      <p>
-        Depression is a mood disorder that causes persistent feelings of sadness, emptiness, or loss of interest. 
-        It can interfere with work, relationships, and overall well-being. With the right care, recovery is possible.
-      </p>
-
-      <h3>Common Symptoms</h3>
-      <ul>
-        <li>Persistent sadness or emptiness</li>
-        <li>Loss of interest in activities once enjoyed</li>
-        <li>Sleep and appetite changes</li>
-        <li>Fatigue or low energy</li>
-        <li>Difficulty concentrating</li>
-        <li>Feelings of hopelessness or guilt</li>
-      </ul>
-    </div>
-
-    <div class="condition-actions">
-      <button class="btn-primary">Take the Test</button>
-      <button class="btn-secondary">Back</button>
-    </div>
-  </div>
-</div> -->
-
-<!-- condition-detail.component.html -->
-<!-- <div class="condition-page" *ngIf="data">
-  
-  <section class="condition-hero">
-    <h1>{{ data.title }}</h1>
-    <p>{{ data.intro }}</p>
-  </section>
-
-  
-  <div class="condition-container">
-    <div class="condition-card">
-      <h2>What is {{ data.title }}?</h2>
-      <p>{{ data.description }}</p>
-
-      <h3>Common Symptoms</h3>
-      <ul>
-        <li *ngFor="let s of data.symptoms">{{ s }}</li>
-      </ul>
-    </div>
-
-    <div class="condition-actions">
-      <button class="btn-primary">Take the Test</button>
-      <button class="btn-secondary" routerLink="/answer-urself">Back</button>
-    </div>
-  </div>
-</div> -->
 
 <div class="condition-page" *ngIf="data">
   <section class="condition-hero">
@@ -102,7 +37,13 @@
   Take the Test
 </button>
 
+      <span *ngIf="userloggedin">
+        <button class="btn-success" [routerLink]="['/test-score',conditionId]">Score</button>
+      </span>
+
       <button class="btn-secondary" routerLink="/answer-urself">Back</button>
+
+     
     </div>
   </div>
 </div>

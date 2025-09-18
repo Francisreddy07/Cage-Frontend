@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ServiceService } from '../../../service.service';
 
 @Component({
   selector: 'app-gad-test',
@@ -10,11 +11,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './gad-test.component.css'
 })
 export class GadTestComponent {
+
+   constructor(private router: Router, private Service: ServiceService) {}
+
   gad2_q1: number = 0;
   gad2_q2: number = 0;
   gad2Score: number | null = null;
 
-  // GAD-7 answers
   gad7_q1: number = 0;
   gad7_q2: number = 0;
   gad7_q3: number = 0;
@@ -29,6 +32,10 @@ export class GadTestComponent {
   calculateGad2Score() {
     this.gad2Score = this.gad2_q1 + this.gad2_q2;
     this.showGad7 = this.gad2Score >= 3;
+
+    const payload = { total: this.gad2Score,name:"gad2Score",userId :localStorage.getItem('userId') };
+    this.Service.savePhq2Result(payload).subscribe();
+
   }
 
   calculateGad7Score() {
@@ -40,6 +47,9 @@ export class GadTestComponent {
       this.gad7_q5 +
       this.gad7_q6 +
       this.gad7_q7;
+
+      const payload = { total: this.gad7Score,name:"gad",userId :localStorage.getItem('userId') };
+    this.Service.savePhq2Result(payload).subscribe();
   }
 
 }

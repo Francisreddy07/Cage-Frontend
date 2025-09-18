@@ -10,10 +10,9 @@
     <li><button [routerLink]="['/condition', 'gad']">Generalised anxiety disorder</button></li>
     <li><button [routerLink]="['/condition', 'health-anxiety']">Health Anxiety</button></li>
     <li><button [routerLink]="['/condition', 'panic-disorder']">Panic Disorder</button></li>
-    <li><button [routerLink]="['/condition', 'social-anxiety']">Social Anxiety</button></li>
     <li><button [routerLink]="['/condition', 'ptsd']">Post traumatic stress disorder</button></li>
     <li><button [routerLink]="['/condition', 'ocd']">Obsessive compulsive disorder</button></li>
-    <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li>
+    <!-- <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li> -->
     <li><button [routerLink]="['/condition', 'dementia']">Dementia</button></li>
   </ul>
 </aside>
@@ -194,8 +193,47 @@
         <tr><td>6</td><td>12.3</td><td>99.8</td><td>92.9</td></tr>
       </tbody>
     </table>
+
   </div>
 
+  <div class="card">
+    <table class="styled-table">
+    <thead>
+        <tr>
+            <th>PHQ-9 Score</th>
+            <th>Depression Severity</th>
+            <th>Proposed Treatment Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0 - 4</td>
+            <td>None-minimal</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>5 - 9</td>
+            <td>Mild</td>
+            <td>Watchful waiting; repeat PHQ-9 at follow-up</td>
+        </tr>
+        <tr>
+            <td>10 - 14</td>
+            <td>Moderate</td>
+            <td>Treatment plan, considering counseling, follow-up and/or pharmacotherapy</td>
+        </tr>
+        <tr>
+            <td>15 - 19</td>
+            <td>Moderately Severe</td>
+            <td>Active treatment with pharmacotherapy and/or psychotherapy</td>
+        </tr>
+        <tr>
+            <td>20 - 27</td>
+            <td>Severe</td>
+            <td>Immediate initiation of pharmacotherapy and, if severe impairment or poor response to therapy, expedited referral to a mental health specialist for psychotherapy and/or collaborative management</td>
+        </tr>
+    </tbody>
+</table>
+  </div>
   <!-- Notes -->
   <div class="note-box">
     <p><strong>Note:</strong> Because the PPV varies with the prevalence of depression, the PPV will be higher in settings with higher prevalence and lower in settings with lower prevalence.</p>
@@ -205,6 +243,10 @@
   <div class="sources">
     <h4>Sources</h4>
     <p>Kroenke K, Spitzer RL, Williams JB. The Patient Health Questionnaire-2: Validity of a Two-Item Depression Screener. Medical Care. 2003;41:1284-92.</p>
+    <p>Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001;16:606-13. </p>
+    <p>Kroenke K, Spitzer RL. The PHQ-9: a new depression diagnostic and severity measure. Psychiatr Ann. 2002;32:509-21.</p>
+    
+
   </div>
 </div>
 

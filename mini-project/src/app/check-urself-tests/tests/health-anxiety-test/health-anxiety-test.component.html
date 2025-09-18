@@ -1,1 +1,105 @@
-<p>health-anxiety-test works!</p>
+<div class="page-wrapper">
+    <aside class="sidebar" role="navigation" aria-label="Test section navigation">
+        <div class="sidebar-logo">
+            <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png?q_auto,f_auto" alt="CAGE Mental Health Logo">
+        </div>
+        <hr>
+        <h3 class="sidebar-title">Sections</h3>
+        <ul class="sidebar-list">
+            <li><button [routerLink]="['/condition', 'depression']">Depression</button></li>
+            <li><button [routerLink]="['/condition', 'emotional-wellbeing']">Emotional Wellbeing with a Baby</button></li>
+            <li><button [routerLink]="['/condition', 'gad']">Generalised anxiety disorder</button></li>
+            <li><button [routerLink]="['/condition', 'health-anxiety']" class="active">Health Anxiety</button></li>
+            <li><button [routerLink]="['/condition', 'panic-disorder']">Panic Disorder</button></li>
+            <li><button [routerLink]="['/condition', 'ptsd']">Post traumatic stress disorder</button></li>
+            <li><button [routerLink]="['/condition', 'ocd']">Obsessive compulsive disorder</button></li>
+            <!-- <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li> -->
+            <li><button [routerLink]="['/condition', 'dementia']">Dementia</button></li>
+        </ul>
+    </aside>
+
+    <div class="banner">
+        <div class="top-strip">
+            “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+        </div>
+    </div>
+
+    <main class="test-content info-box-2">
+        <div class="test-header">
+            <h2>Health Anxiety Assessment</h2>
+            <p>This assessment screens for common symptoms of health anxiety.</p>
+        </div>
+
+        <div class="card info-box-2" id="health-anxiety-assessment">
+            <h3>Health Anxiety Screening</h3>
+            <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+            <div class="question-box" role="group" aria-label="Health anxiety questions">
+                <label><strong>1. Worrying that you have a serious illness?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ha_q1" [(ngModel)]="ha_q1" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ha_q1" [(ngModel)]="ha_q1" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ha_q1" [(ngModel)]="ha_q1" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ha_q1" [(ngModel)]="ha_q1" [value]="3"> Nearly every day</label>
+                </div>
+                
+                <label><strong>2. Being preoccupied with physical sensations like aches, pains, or changes in your body?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ha_q2" [(ngModel)]="ha_q2" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ha_q2" [(ngModel)]="ha_q2" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ha_q2" [(ngModel)]="ha_q2" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ha_q2" [(ngModel)]="ha_q2" [value]="3"> Nearly every day</label>
+                </div>
+                
+                <label><strong>3. Feeling that doctors or other medical professionals are not taking your health concerns seriously enough?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ha_q3" [(ngModel)]="ha_q3" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ha_q3" [(ngModel)]="ha_q3" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ha_q3" [(ngModel)]="ha_q3" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ha_q3" [(ngModel)]="ha_q3" [value]="3"> Nearly every day</label>
+                </div>
+                
+                <label><strong>4. Repeatedly checking for physical signs of illness (e.g., checking a mole, taking your temperature, looking in the mirror for lumps)?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ha_q4" [(ngModel)]="ha_q4" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ha_q4" [(ngModel)]="ha_q4" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ha_q4" [(ngModel)]="ha_q4" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ha_q4" [(ngModel)]="ha_q4" [value]="3"> Nearly every day</label>
+                </div>
+                
+                <label><strong>5. Frequently seeking reassurance about your health from family, friends, or online resources?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ha_q5" [(ngModel)]="ha_q5" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ha_q5" [(ngModel)]="ha_q5" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ha_q5" [(ngModel)]="ha_q5" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ha_q5" [(ngModel)]="ha_q5" [value]="3"> Nearly every day</label>
+                </div>
+
+                <label><strong>6. Avoiding places, activities, or conversations related to illness or hospitals?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ha_q6" [(ngModel)]="ha_q6" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ha_q6" [(ngModel)]="ha_q6" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ha_q6" [(ngModel)]="ha_q6" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ha_q6" [(ngModel)]="ha_q6" [value]="3"> Nearly every day</label>
+                </div>
+                
+                <label><strong>7. Finding it difficult to stop thinking about your health concerns?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ha_q7" [(ngModel)]="ha_q7" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ha_q7" [(ngModel)]="ha_q7" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ha_q7" [(ngModel)]="ha_q7" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ha_q7" [(ngModel)]="ha_q7" [value]="3"> Nearly every day</label>
+                </div>
+            </div>
+            <div class="result-display">
+                <button class="save-btn" (click)="calculateHAScore()">Calculate Score</button>
+                <p *ngIf="haScore !== null" class="result">Your score: {{ haScore }}</p>
+            </div>
+        </div>
+
+        <div class="card info-box-2">
+            <h3>Understanding Your Score</h3>
+            <p>Scores on this assessment can indicate a range of health anxiety severity. A higher score suggests a greater need for professional consultation. Health anxiety often involves a cycle of worry, physical sensations, and seeking reassurance.
+            </p>
+        </div>
+    </main>
+</div>

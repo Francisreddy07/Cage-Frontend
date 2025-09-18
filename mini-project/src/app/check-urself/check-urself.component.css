@@ -730,7 +730,7 @@
   text-align: center;
 }
 
-.btn-primary, .btn-secondary {
+.btn-primary, .btn-secondary ,.btn-success{
   padding: 12px 28px;
   border: none;
   border-radius: 8px;
@@ -747,6 +747,11 @@
 
 .btn-primary:hover {
   background: #005fd4;
+}
+
+.btn-success{
+  background:green;
+  color:#fff;
 }
 
 .btn-secondary {

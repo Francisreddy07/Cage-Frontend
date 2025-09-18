@@ -28,6 +28,7 @@ export class SignUpComponent {
     this.auth.login({ email: this.email, password: this.password }).subscribe({
       next: (res) => {
         this.auth.saveToken(res.token);
+        localStorage.setItem('userId',res.user)
         this.router.navigate(['/']);
       },
       error: (err) => alert(err.error.message || 'Login failed')
@@ -68,7 +69,6 @@ signUp(name: string, email: string, password: string): void {
         this.signingUp = false;
       },
       error: (err: HttpErrorResponse) => {
-        // Network/CORS will surface here as status 0
         if (err.status === 0) {
           alert(`Network error: ${err.message}. Is backend running on ${this.apiBase}?`);
         } else if (err.status === 409) {
@@ -83,7 +83,7 @@ signUp(name: string, email: string, password: string): void {
     });
 }
 
-// Example handler if your template uses a form submit:
+
 onSubmit(form: { value: { name: string; email: string; password: string } }): void {
   const { name, email, password } = form.value;
   if (!email || !password) {

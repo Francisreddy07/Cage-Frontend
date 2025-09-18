@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ServiceService } from '../../../service.service';
 
 @Component({
   selector: 'app-emotional-wellbeing-test',
@@ -10,7 +11,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './emotional-wellbeing-test.component.css'
 })
 export class EmotionalWellbeingTestComponent {
-
+ constructor(private router: Router, private Service: ServiceService) {}
   ewb_q1: number = 0;
   ewb_q2: number = 0;
   ewb_q3: number = 0;
@@ -25,5 +26,8 @@ export class EmotionalWellbeingTestComponent {
       this.ewb_q3 + 
       this.ewb_q4 + 
       this.ewb_q5;
+
+      const payload = { total: this.ewbScore,name:"emotional-wellbeing",userId :localStorage.getItem('userId') };
+    this.Service.savePhq2Result(payload).subscribe();
   }
 }

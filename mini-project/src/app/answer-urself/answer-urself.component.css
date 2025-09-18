@@ -1107,7 +1107,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 58vh;
+  min-height: 56vh;
   perspective: 1000px;
 }
 

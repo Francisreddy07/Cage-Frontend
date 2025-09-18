@@ -1,1 +1,127 @@
-<p>ocd-test works!</p>
+<div class="page-wrapper">
+    <aside class="sidebar" role="navigation" aria-label="Test section navigation">
+        <div class="sidebar-logo">
+            <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png?q_auto,f_auto" alt="CAGE Mental Health Logo">
+        </div>
+        <hr>
+        <h3 class="sidebar-title">Sections</h3>
+        <ul class="sidebar-list">
+            <li><button [routerLink]="['/condition', 'depression']">Depression</button></li>
+            <li><button [routerLink]="['/condition', 'emotional-wellbeing']">Emotional Wellbeing with a Baby</button></li>
+            <li><button [routerLink]="['/condition', 'gad']">Generalised anxiety disorder</button></li>
+            <li><button [routerLink]="['/condition', 'health-anxiety']">Health Anxiety</button></li>
+            <li><button [routerLink]="['/condition', 'panic-disorder']">Panic Disorder</button></li>
+            <li><button [routerLink]="['/condition', 'ptsd']">Post traumatic stress disorder</button></li>
+            <li><button [routerLink]="['/condition', 'ocd']" class="active">Obsessive compulsive disorder</button></li>
+            <!-- <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li> -->
+            <li><button [routerLink]="['/condition', 'dementia']">Dementia</button></li>
+        </ul>
+    </aside>
+
+    <div class="banner">
+        <div class="top-strip">
+            “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+        </div>
+    </div>
+
+    <main class="test-content info-box-2">
+        <div class="test-header">
+            <h2>Obsessive-Compulsive Disorder</h2>
+            <p>This assessment helps identify common obsessions and compulsions that may be signs of OCD.</p>
+        </div>
+
+        <div class="card info-box-2" id="ocd-assessment">
+            <h3>OCD Assessment</h3>
+            <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+            <div class="question-box" role="group" aria-label="OCD questions">
+                <label><strong>1. Having unwanted, repeated thoughts, urges, or mental images that make you feel anxious or distressed? (These are obsessions)</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ocd_q1" [(ngModel)]="ocd_q1" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ocd_q1" [(ngModel)]="ocd_q1" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ocd_q1" [(ngModel)]="ocd_q1" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ocd_q1" [(ngModel)]="ocd_q1" [value]="3"> Nearly every day</label>
+                </div>
+
+                <label><strong>2. Feeling a strong need to do certain actions or rituals repeatedly to reduce your anxiety? (These are compulsions)</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ocd_q2" [(ngModel)]="ocd_q2" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ocd_q2" [(ngModel)]="ocd_q2" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ocd_q2" [(ngModel)]="ocd_q2" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ocd_q2" [(ngModel)]="ocd_q2" [value]="3"> Nearly every day</label>
+                </div>
+
+                <label><strong>3. Spending a significant amount of time (e.g., more than one hour per day) on these thoughts or behaviors?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ocd_q3" [(ngModel)]="ocd_q3" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ocd_q3" [(ngModel)]="ocd_q3" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ocd_q3" [(ngModel)]="ocd_q3" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ocd_q3" [(ngModel)]="ocd_q3" [value]="3"> Nearly every day</label>
+                </div>
+
+                <label><strong>4. Having these thoughts or behaviors interfere with your daily life, work, social activities, or relationships?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ocd_q4" [(ngModel)]="ocd_q4" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ocd_q4" [(ngModel)]="ocd_q4" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ocd_q4" [(ngModel)]="ocd_q4" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ocd_q4" [(ngModel)]="ocd_q4" [value]="3"> Nearly every day</label>
+                </div>
+                
+                <label><strong>5. Having to count, check, or repeat actions to feel "just right" or to prevent something bad from happening?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ocd_q5" [(ngModel)]="ocd_q5" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ocd_q5" [(ngModel)]="ocd_q5" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ocd_q5" [(ngModel)]="ocd_q5" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ocd_q5" [(ngModel)]="ocd_q5" [value]="3"> Nearly every day</label>
+                </div>
+
+                <label><strong>6. Being preoccupied with thoughts of contamination, germs, or cleanliness, leading you to wash or clean excessively?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ocd_q6" [(ngModel)]="ocd_q6" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ocd_q6" [(ngModel)]="ocd_q6" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ocd_q6" [(ngModel)]="ocd_q6" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ocd_q6" [(ngModel)]="ocd_q6" [value]="3"> Nearly every day</label>
+                </div>
+
+                <label><strong>7. Having intrusive, disturbing thoughts about harming yourself or others, or about sexual or religious content?</strong></label>
+                <div class="options">
+                    <label><input type="radio" name="ocd_q7" [(ngModel)]="ocd_q7" [value]="0"> Not at all</label>
+                    <label><input type="radio" name="ocd_q7" [(ngModel)]="ocd_q7" [value]="1"> Several days</label>
+                    <label><input type="radio" name="ocd_q7" [(ngModel)]="ocd_q7" [value]="2"> More than half the days</label>
+                    <label><input type="radio" name="ocd_q7" [(ngModel)]="ocd_q7" [value]="3"> Nearly every day</label>
+                </div>
+            </div>
+            <div class="result-display">
+                <button class="save-btn" (click)="calculateOCDScore()">Calculate Score</button>
+                <p *ngIf="ocdScore !== null" class="result">Your score: {{ ocdScore }}</p>
+            </div>
+        </div>
+
+        <div class="card info-box-2">
+            <h3>Understanding Obsessive-Compulsive Disorder (OCD)</h3>
+            <p>OCD is a mental health condition characterized by a cycle of unwanted thoughts and repetitive behaviors. **Obsessions** are intrusive and distressing thoughts or urges, while **compulsions** are the actions a person feels driven to perform to reduce the anxiety caused by these obsessions.</p>
+
+            <div class="info-box">
+                <h4>Common Obsessions and Compulsions</h4>
+                <p>OCD can manifest in many different ways, often centered on a specific theme. Recognizing these patterns is key to understanding the disorder.</p>
+                <ul>
+                    <li><span style="font-weight: bolder;">Contamination:</span> Fear of germs or illness, leading to excessive washing or cleaning.</li>
+                    <li><span style="font-weight: bolder;">Checking:</span> Repeatedly checking things like locks, appliances, or lights to prevent harm or disaster.</li>
+                    <li><span style="font-weight: bolder;">Symmetry and Orderliness:</span> A strong need to have things perfectly arranged or aligned, with distress if they are not.</li>
+                    <li><span style="font-weight: bolder;">Intrusive Thoughts:</span> Disturbing thoughts about harming oneself or others, which are often inconsistent with the person's values.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>Coping and Support</h4>
+                <p>While living with OCD can be challenging, effective treatments and strategies can significantly improve quality of life. </p>
+                <ul>
+                    <li><span style="font-weight: bolder;">Therapy:</span> Cognitive Behavioral Therapy (CBT), specifically **Exposure and Response Prevention (ERP)**, is considered the gold standard treatment for OCD.</li>
+                    <li><span style="font-weight:bolder">Medication:</span> Selective serotonin reuptake inhibitors (SSRIs) are often prescribed to help manage symptoms.</li>
+                    <li><span style="font-weight: bolder;">Self-Help Strategies:</span> Practicing mindfulness, managing stress, and joining a support group can be helpful alongside professional treatment.</li>
+                </ul>
+            </div>
+            
+            <p>OCD is a treatable condition, and seeking help is a courageous step toward recovery. You don't have to manage this on your own.</p>
+        </div>
+    </main>
+</div>

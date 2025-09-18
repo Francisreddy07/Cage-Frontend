@@ -1,1 +1,112 @@
-<p>ptsd-test works!</p>
+<div class="page-wrapper">
+    <aside class="sidebar" role="navigation" aria-label="Test section navigation">
+        <div class="sidebar-logo">
+            <img src="https://res.cloudinary.com/dvfceqgqo/image/upload/c_crop,w_280,h_130/v1757190271/WhatsApp_Image_2025-09-06_at_23.21.28_3382ceb7-removebg-preview_n9qblj.png?q_auto,f_auto" alt="CAGE Mental Health Logo">
+        </div>
+        <hr>
+        <h3 class="sidebar-title">Sections</h3>
+        <ul class="sidebar-list">
+            <li><button [routerLink]="['/condition', 'depression']">Depression</button></li>
+            <li><button [routerLink]="['/condition', 'emotional-wellbeing']">Emotional Wellbeing with a Baby</button></li>
+            <li><button [routerLink]="['/condition', 'gad']">Generalised anxiety disorder</button></li>
+            <li><button [routerLink]="['/condition', 'health-anxiety']">Health Anxiety</button></li>
+            <li><button [routerLink]="['/condition', 'panic-disorder']">Panic Disorder</button></li>
+            <li><button [routerLink]="['/condition', 'ptsd']" class="active">Post traumatic stress disorder</button></li>
+            <li><button [routerLink]="['/condition', 'ocd']">Obsessive compulsive disorder</button></li>
+            <!-- <li><button [routerLink]="['/condition', 'phobias']">Phobias</button></li> -->
+            <li><button [routerLink]="['/condition', 'dementia']">Dementia</button></li>
+        </ul>
+    </aside>
+
+    <div class="banner">
+        <div class="top-strip">
+            “Mental health shapes every thought, choice, and action—protect it, prioritize it.”
+        </div>
+    </div>
+
+    <main class="test-content info-box-2">
+        <div class="test-header">
+            <h2>Primary Care PTSD Screen for DSM-5 (PC-PTSD-5)</h2>
+            <p>The Primary Care PTSD Screen for DSM-5 (PC-PTSD-5) is a screening tool designed to identify persons with probable PTSD. Available data suggest the PC-PTSD-5 screen should be considered "positive" if the respondent answers "yes" to any 3 items in the questions listed below. Those screening positive should have further assessment with a structured interview for PTSD, preferably performed by a mental health professional who has experience in diagnosing PTSD.</p>
+        </div>
+
+        <div class="card info-box-2" id="ptsd-assessment">
+            <h3>Instructions</h3>
+            <p>Sometimes things happen to people that are unusually or especially frightening, horrible, or traumatic.</p>
+            <p>For example:</p>
+            <ul>
+                <li>a serious accident or fire</li>
+                <li>a physical or sexual assault or abuse</li>
+                <li>an earthquake or flood</li>
+                <li>a war</li>
+                <li>seeing someone be killed or seriously injured</li>
+                <li>having a loved one die through homicide or suicide</li>
+            </ul>
+            <p>If you have ever experienced this type of event, please answer the following:</p>
+
+            <h4 class="time-frame">In the past month, have you:</h4>
+
+            <div class="question-box" role="group" aria-label="PTSD questions">
+                <div class="question-item">
+                    <label><strong>1. Had nightmares about the event(s) or thought about the event(s) when you did not want to?</strong></label>
+                    <div class="options-inline">
+                        <label><input type="radio" name="ptsd_q1" [(ngModel)]="ptsd_q1" [value]="'yes'"> Yes</label>
+                        <label><input type="radio" name="ptsd_q1" [(ngModel)]="ptsd_q1" [value]="'no'"> No</label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label><strong>2. Tried hard not to think about the event(s) or went out of your way to avoid situations that reminded you of the event(s)?</strong></label>
+                    <div class="options-inline">
+                        <label><input type="radio" name="ptsd_q2" [(ngModel)]="ptsd_q2" [value]="'yes'"> Yes</label>
+                        <label><input type="radio" name="ptsd_q2" [(ngModel)]="ptsd_q2" [value]="'no'"> No</label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label><strong>3. Been constantly on guard, watchful, or easily startled?</strong></label>
+                    <div class="options-inline">
+                        <label><input type="radio" name="ptsd_q3" [(ngModel)]="ptsd_q3" [value]="'yes'"> Yes</label>
+                        <label><input type="radio" name="ptsd_q3" [(ngModel)]="ptsd_q3" [value]="'no'"> No</label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label><strong>4. Felt numb or detached from people, activities, or your surroundings?</strong></label>
+                    <div class="options-inline">
+                        <label><input type="radio" name="ptsd_q4" [(ngModel)]="ptsd_q4" [value]="'yes'"> Yes</label>
+                        <label><input type="radio" name="ptsd_q4" [(ngModel)]="ptsd_q4" [value]="'no'"> No</label>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <label><strong>5. Felt guilty or unable to stop blaming yourself or others for the event(s) or any problems the event(s) may have caused?</strong></label>
+                    <div class="options-inline">
+                        <label><input type="radio" name="ptsd_q5" [(ngModel)]="ptsd_q5" [value]="'yes'"> Yes</label>
+                        <label><input type="radio" name="ptsd_q5" [(ngModel)]="ptsd_q5" [value]="'no'"> No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-display">
+                <button class="save-btn" (click)="calculatePTSDScore()">Calculate Score</button>
+                <p *ngIf="ptsdScore !== null" class="result">Your score: {{ ptsdScore }}</p>
+                <p *ngIf="ptsdScore !== null && ptsdScore >= 3" class="warning-message">
+                    Based on your answers, your score suggests a positive screen for probable PTSD. We recommend speaking with a mental health professional for a full assessment.
+                </p>
+            </div>
+        </div>
+
+         <div class="sources card info-box-2">
+            <h4>Sources</h4>
+            <ol>
+                <li>Prins A, Bovin MJ, Smolenski DJ, et al. The Primary Care PTSD Screen for DSM-5 (PC-PTSD-5): Development and Evaluation Within a Veteran Primary Care Sample. J Gen Intern Med. 2016;31:1206-11.</li>
+            </ol>
+            <br>
+        </div>
+            <div class = "card info-box-2">
+            <h4>Suggested Resources</h4>
+           <a href="https://www.ptsd.va.gov/index.asp" target="_blank">U.S. Department of Veterans Affairs. PTSD: National Center for PTSD</a>
+            </div>
+    </main>
+</div>
